@@ -1,0 +1,6 @@
+/* 项目联想红：以用户最后提供的色块为准，红色界面元素统一使用此变量。 */
+:root{
+  --lenovo-red:#d72c2c;
+  --lenovo-red-rgb:215,44,44;
+}
+body.standalone-page .trade-brand img{filter:url(#lenovo-brand-red)}

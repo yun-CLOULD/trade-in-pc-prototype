@@ -1,0 +1,185 @@
+@import url("lenovo-theme.css?v=20261012-1");
+*{box-sizing:border-box}html,body{margin:0;height:100%;font:14px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","PingFang SC",sans-serif;color:#333;background:#fff}button,input{font:inherit;color:inherit}button{padding:0;border:0;background:none}button,input{pointer-events:none}header{height:58px;padding:0 28px;display:flex;align-items:center;border-bottom:1px solid #e5e5e5;background:#fff}header .back{display:none}h1{margin:0;font-size:20px;font-weight:500}h2{margin:0;font-size:16px;font-weight:500}h3{margin:18px 0 10px;font-size:12px;color:#777;font-weight:400}main{position:absolute;top:58px;bottom:76px;left:0;right:0;overflow:auto;padding:24px 28px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;gap:20px 28px;align-content:start;align-items:start}section{min-width:0;border:1px solid #e5e5e5;background:#fff;padding:20px;margin:0;border-radius:0}.new-card{grid-column:1;grid-row:1}.exchange{grid-column:2;grid-row:1 / 3}.section-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}.tag{font-size:12px;color:#139844;background:#f3faf5;padding:2px 8px;border:1px solid #d5eddd}.new-product{display:flex;gap:16px;align-items:center}.new-thumb{width:86px;height:86px;flex-shrink:0;background:#f8ead9;display:flex;flex-direction:column;justify-content:center;padding:10px;font-size:13px;color:#70512e}.new-product p{font-size:14px;line-height:22px;margin:0 0 10px}.new-price{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;color:var(--lenovo-red)}.new-price b{font-size:28px;line-height:32px}.new-price small{font-size:14px}.new-price>span{font-size:12px}.price-breakdown-wrap{margin-top:22px;padding-top:18px;border-top:1px solid #eee;display:flex;flex-wrap:wrap;gap:14px 8px;align-items:center}.price-breakdown-scroll{width:100%;overflow:visible}.price-breakdown{display:flex;align-items:center;justify-content:space-between;gap:5px}.price-breakdown div{text-align:center;white-space:nowrap}.price-breakdown b{font-size:19px;display:block;line-height:28px}.price-breakdown small{font-size:11px}.price-breakdown span{display:block;color:#999;font-size:12px;margin-top:2px}.price-breakdown i,.fixed-minus{font-style:normal;color:#aaa;font-size:14px}.price-breakdown .red{color:#149744}.fixed-minus{display:none}.trade-benefit-fixed{display:flex;width:100%;gap:28px;background:rgba(var(--lenovo-red-rgb),.03);border:1px solid rgba(var(--lenovo-red-rgb),.15);padding:10px 14px;color:#666;font-size:12px}.trade-benefit-fixed b{font-size:20px;color:var(--lenovo-red);margin-left:5px}.trade-benefit-fixed small{font-size:12px}.payment-explain{margin-top:16px;padding:0;color:#888;font-size:12px;line-height:21px}.payment-explain p{margin:0}.payment-explain b{color:var(--lenovo-red);font-weight:400}.price-summary-info{display:none}.old-product{display:flex;align-items:center;gap:16px}.old-product img{width:64px;height:64px;object-fit:cover;border-radius:0}.old-copy{flex:1}.old-copy p{margin:0 0 8px;font-size:14px}.old-price{display:flex;gap:10px;align-items:baseline}.old-price span{font-size:12px;color:#999}.old-price b{font-size:22px;color:var(--lenovo-red)}.old-price small{font-size:12px}.text-action{font-size:12px;color:var(--lenovo-red)}.method-note{margin:8px 0 10px;font-size:12px;color:#999}.field{width:100%;display:flex;align-items:center;gap:12px;min-height:46px;border:0;border-bottom:1px solid #eee;text-align:left;background:none;font-size:14px;padding:6px 0}.account{font-size:13px}.account b{font-weight:400;margin-left:auto}.field em{font-style:normal;color:#bbb;margin-left:auto}.tabs{display:flex;border-bottom:1px solid #ddd;gap:0;margin-top:16px}.tabs button{height:36px;min-width:106px;border:1px solid #ddd;margin-bottom:-1px;font-size:14px;background:#fafafa}.tabs button+button{border-left:0}.tabs .active{color:var(--lenovo-red);border-top:2px solid var(--lenovo-red);border-bottom-color:white;background:white}.steps{display:flex;align-items:flex-start;justify-content:space-between;margin:12px 0 18px}.steps div{text-align:center}.steps img{display:block;width:32px;height:32px;margin:0 auto 7px}.steps span{font-size:12px;color:#666}.steps i{flex:1;border-top:1px dashed #ddd;margin:16px 12px 0}.field-label{position:relative;flex:0 0 56px;color:#666;padding-left:10px}.required{position:absolute;left:0;color:var(--lenovo-red)}.field input{height:30px;width:calc(100% - 68px);border:1px solid #ddd;background:#fff;padding:0 10px;color:#333;opacity:1;-webkit-text-fill-color:#333}.field input::placeholder{color:#aaa;-webkit-text-fill-color:#aaa}.address{align-items:flex-start;padding:12px 0}.address #address{font-size:13px;line-height:21px}.warning{font-size:12px;color:var(--lenovo-red);margin:8px 0 2px;padding-left:68px}.time #time{color:#aaa;font-size:13px}.agreement{display:flex;align-items:center;gap:6px;font-size:12px;color:#777;margin-top:18px}.agreement input{margin:0;width:14px;height:14px}.agreement .text-action{font-size:12px}footer{position:absolute;bottom:0;left:0;right:0;height:76px;display:flex;align-items:center;justify-content:flex-end;gap:12px;padding:0 28px;border-top:1px solid #e5e5e5;background:#fafafa}footer button{height:38px;width:136px;font-size:14px;border:1px solid var(--lenovo-red);color:var(--lenovo-red);border-radius:0;background:white}footer button:last-child{background:var(--lenovo-red);color:#fff}#toast,dialog{display:none}[hidden]{display:none!important}
+/* Compact desktop variant; preserve readable type instead of scaling the iframe. */
+header{height:50px;padding:0 24px}h1{font-size:18px}main{top:50px;bottom:64px;padding:18px 24px;gap:16px 20px}section{padding:16px}h2{font-size:14px}.section-heading{margin-bottom:14px}.new-product{gap:12px}.new-thumb{width:64px;height:70px;font-size:11px;padding:8px}.new-product p{font-size:12px;line-height:19px}.new-price{gap:5px}.new-price b{font-size:26px}.new-price>span{font-size:11px}.price-breakdown-wrap{margin-top:16px;padding-top:14px;gap:10px}.price-breakdown b{font-size:16px}.price-breakdown span{font-size:11px}.trade-benefit-fixed{gap:14px;padding:8px}.trade-benefit-fixed b{font-size:17px;margin-left:2px}.payment-explain{margin-top:12px;font-size:12px;line-height:20px}.old-product{gap:12px}.old-product img{width:48px;height:48px}.old-copy p{font-size:12px;line-height:19px}.old-price{gap:6px}.old-price b{font-size:19px}.field{font-size:12px;min-height:42px;gap:8px}.field-label{flex-basis:48px}.field input{width:calc(100% - 56px);font-size:12px}.address #address{font-size:12px}.warning{padding-left:56px;line-height:19px}.tabs{margin-top:12px}.tabs button{height:32px;min-width:96px;font-size:12px}.steps{margin:10px 0 14px}.agreement{align-items:flex-start;line-height:20px}.agreement input{margin-top:3px;flex-shrink:0}footer{height:64px;padding:0 24px}footer button{width:120px;height:34px;font-size:14px}
+/* Interactive desktop controls and nested dialogs. */
+button,input{pointer-events:auto}button{cursor:pointer}button:disabled{cursor:default;color:#aaa}.field input:focus,.sheet-input:focus{outline:none;border-color:var(--lenovo-red)}.time.chosen #time{color:#333}.tabs button:hover,.text-action:hover{color:var(--lenovo-red)}.price-summary-info{display:block;position:relative;margin-top:4px;text-align:right}.price-detail-toggle{color:#999;font-size:15px}.price-detail-bubble{position:absolute;right:0;bottom:25px;width:280px;padding:12px;text-align:left;background:white;border:1px solid #ddd;box-shadow:0 3px 12px #0002;z-index:8;color:#666;font-size:12px}#sheet{position:fixed;inset:0;margin:auto;width:480px;max-width:calc(100vw - 48px);max-height:calc(100vh - 40px);height:auto;border:1px solid #ddd;border-radius:0;padding:0;background:white;box-shadow:0 12px 40px #0003;color:#333}#sheet[open]{display:block}#sheet::backdrop{background:#0005}.sheet-head{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #eee}.sheet-head h2{font-size:16px}.sheet-head button{font-size:22px;color:#999}#sheet-content{padding:22px}.sheet-input{width:100%;height:36px;border:1px solid #ddd;padding:0 10px;font-size:13px}.confirm{display:block;width:100px;height:34px;background:var(--lenovo-red);color:white;margin:20px 0 0 auto;border:0}.sheet-help{font-size:13px;line-height:24px;margin:0}.time-picker-sheet .sheet-head{display:none}.time-picker-sheet #sheet-content{padding:0}.time-picker-head{display:flex;align-items:center;justify-content:space-between;height:54px;padding:0 20px;border-bottom:1px solid #eee;font-size:14px}.time-picker-head b{font-weight:500}.time-picker-head button{font-size:13px}.time-picker-head button:last-child:not(:disabled){color:var(--lenovo-red)}.time-picker-columns{display:grid;grid-template-columns:1fr 1fr;height:300px}.picker-column{min-width:0;display:flex;flex-direction:column}.picker-column+ .picker-column{border-left:1px solid #eee}.picker-column>p{margin:0;padding:10px 16px;background:#fafafa;font-size:12px;color:#999}.time-picker-dates,.time-picker-slots{overflow:auto;flex:1}.picker-option{display:block;width:100%;height:42px;text-align:left;padding:0 18px;border-bottom:1px solid #f2f2f2;font-size:13px}.picker-option:hover{background:#fafafa}.picker-option.active{background:rgba(var(--lenovo-red-rgb),.05);color:var(--lenovo-red)}.picker-option.active:after{content:'✓';float:right}#toast:not([hidden]){display:block;position:fixed;z-index:99999;left:50%;top:46%;transform:translate(-50%,-50%);padding:12px 20px;background:#333e;color:#fff;font-size:13px;max-width:80%;text-align:center}.agreement input{accent-color:var(--lenovo-red)}
+#sheet{height:fit-content;min-height:0}
+/* Single-column desktop flow. */
+main{display:block;padding:20px 24px}main>section{margin:0 0 18px;padding:18px 20px}.new-card,.exchange{grid-column:auto;grid-row:auto}.new-product p{font-size:14px;line-height:22px}.new-thumb{width:76px;height:76px}.new-product{gap:18px}.price-breakdown{justify-content:flex-start;gap:20px}.price-breakdown-wrap{margin-top:18px}.trade-benefit-fixed{gap:28px}.old-copy p{font-size:14px}.exchange .steps{max-width:450px;margin:14px auto 20px}.field{min-height:46px;font-size:14px}.field-label{flex-basis:70px}.field input{width:calc(100% - 78px);font-size:14px}.warning{padding-left:78px}.address #address{font-size:14px}.agreement{margin-top:20px}
+
+/* Price hierarchy and in-place editing views. */
+.price-breakdown{justify-content:space-between;gap:10px}.price-breakdown b{font-size:18px}.price-breakdown-wrap{gap:16px}.trade-benefit-fixed{background:rgba(var(--lenovo-red-rgb),.03);border:1px solid rgba(var(--lenovo-red-rgb),.15);padding:14px 18px;gap:40px}.trade-benefit-fixed>span{display:flex;align-items:center;gap:16px;flex:1}.trade-benefit-fixed i{font-style:normal;font-size:20px;color:var(--lenovo-red)}.trade-benefit-fixed .benefit-value{display:flex;flex-direction:column;gap:3px}.trade-benefit-fixed b{margin:0;font-size:20px;line-height:24px}.trade-benefit-fixed .benefit-value>span{font-size:12px;color:#777}.payment-explain{color:#888;line-height:22px;margin-top:12px}
+body.sheet-view>header,body.sheet-view>main,body.sheet-view>footer{visibility:hidden;pointer-events:none}
+#sheet{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;min-height:100%;margin:0;border:0;box-shadow:none;outline:none;background:#fff;overflow:auto}
+.sheet-head{height:50px;padding:0 54px 0 24px}.sheet-head button{font-size:13px;color:#666}#sheet-content{padding:24px}.time-picker-head{height:50px;padding:0 54px 0 24px}.time-picker-columns{height:calc(100vh - 50px)}.picker-column>p{padding:14px 24px}.picker-option{height:52px;padding:0 24px}.time-picker-sheet #sheet-content{padding:0}
+
+/* Consistent vector icons and quieter form chrome. */
+.picker-option{position:relative;padding-right:48px}
+.picker-option.active:after{content:"";position:absolute;right:22px;top:50%;width:18px;height:18px;transform:translateY(-50%);background:center/18px 18px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='m5 12 4 4L19 6' stroke='%23d72c2c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+[data-sheet="device"]{display:inline-flex;align-items:center;gap:6px;min-height:28px;font-size:13px}
+[data-sheet="device"]:after,.field em{content:"";display:inline-block;width:16px;height:16px;flex:0 0 16px;align-self:center;background:center/16px 16px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='m9 5 7 7-7 7' stroke='%23999999' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+[data-sheet="device"]:after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='m9 5 7 7-7 7' stroke='%23d72c2c' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.new-card{border:0;padding-top:8px}
+.exchange .field{border-bottom:0}
+
+.time-picker-sheet .picker-option{height:44px}.time-picker-sheet .picker-column>p{padding:10px 20px}.time-picker-sheet .time-picker-head{padding-left:20px}
+/* Compact price equation with fixed trade-in benefits. */
+main{padding:18px 24px}main>section{margin-bottom:16px;padding:16px 18px}.new-card{border:1px solid #e5e5e5}.section-heading{margin-bottom:14px}.new-product{gap:16px}.price-breakdown-wrap{display:flex;flex-wrap:nowrap;gap:8px;margin-top:16px;padding-top:16px}.price-breakdown-scroll{width:auto;flex:1;min-width:0;overflow-x:auto}.price-breakdown{justify-content:space-between;gap:7px;min-width:388px}.price-breakdown b{font-size:16px}.price-breakdown span{font-size:11px}.price-breakdown i{font-size:13px}.fixed-minus{display:none}.trade-benefit-fixed{width:160px;flex:0 0 160px;display:flex;flex-direction:column;gap:5px;padding:8px 10px;border:1px solid rgba(var(--lenovo-red-rgb),.3);border-radius:4px;background:rgba(var(--lenovo-red-rgb),.03)}.trade-benefit-fixed>span{display:flex;flex:none;gap:5px;align-items:center}.trade-benefit-fixed i{font-size:14px}.trade-benefit-fixed .benefit-value{flex:1;display:flex;flex-direction:row-reverse;align-items:baseline;justify-content:space-between;gap:4px}.trade-benefit-fixed .benefit-value>span{font-size:11px;color:var(--lenovo-red);white-space:nowrap}.trade-benefit-fixed b{font-size:15px;line-height:20px;white-space:nowrap}.trade-benefit-fixed small{font-size:11px}.payment-explain{margin-top:12px;line-height:20px}.old-product{gap:14px}
+/* Keep both time columns independently scrollable in the compact dialog. */
+.time-picker-columns{height:calc(100vh - 50px);min-height:0;overflow:hidden}.picker-column{min-height:0;overflow:hidden}.picker-column>p{flex-shrink:0}.time-picker-dates,.time-picker-slots{min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}.time-picker-sheet .picker-option{height:48px;flex-shrink:0}
+/* Tighter desktop spacing and neutral input focus. */
+main{padding:14px 20px}main>section{padding:12px 16px;margin-bottom:12px}.section-heading{margin-bottom:8px}.new-product{gap:12px}.new-product p{margin-bottom:6px}.new-thumb{width:68px;height:68px}.price-breakdown-wrap{margin-top:12px;padding-top:12px;gap:8px}.price-breakdown{justify-content:flex-start;gap:10px;min-width:0}.price-breakdown>div{flex:1}.price-breakdown>i{flex:0 0 auto}.price-breakdown>i:first-child{margin-right:0}.payment-explain{margin-top:8px;line-height:19px}.old-product{gap:12px}.old-product img{width:48px;height:48px}.old-copy p{margin-bottom:4px}.exchange .method-note{margin:6px 0 8px}.exchange .steps{margin:10px auto 12px}.exchange h3{margin:12px 0 6px}.field{min-height:46px;padding:4px 0}.field input{height:36px}.field input:focus,.sheet-input:focus{border-color:#ddd;outline:none;box-shadow:none}.field input:focus-visible,.sheet-input:focus-visible{outline:none}.address{padding:8px 0}.warning{margin:4px 0 6px}.agreement{margin-top:12px}
+/* Compact equation: one subtraction sign before the benefit group. */
+.price-breakdown-wrap{justify-content:flex-start;gap:8px}.price-breakdown-scroll{flex:0 1 auto;width:auto}.price-breakdown{gap:8px}.price-breakdown>div{flex:0 0 auto;min-width:66px}.price-breakdown>div:nth-of-type(3){min-width:82px}.price-breakdown>i{margin:0}.fixed-minus{display:block;flex:0 0 auto;font-style:normal;color:#aaa;font-size:14px}.trade-benefit-fixed{width:148px;flex:0 0 148px;padding:8px 10px}.trade-benefit-fixed>span>i{display:none}
+/* Close-set operators and benefit labels; explanation icon above the prices. */
+.price-breakdown-wrap{position:relative;gap:4px;padding-right:24px}.price-breakdown{gap:4px}.price-breakdown>div{min-width:56px}.price-breakdown>div:nth-of-type(3){min-width:72px}.trade-benefit-fixed{width:120px;flex-basis:120px;padding:8px}.trade-benefit-fixed .benefit-value{flex:none;gap:6px;justify-content:flex-start}.trade-benefit-fixed>span{justify-content:flex-start}.new-card{position:relative}.payment-explain{position:static}.price-summary-info{position:absolute;top:146px;right:16px;margin:0;line-height:18px}.price-detail-toggle{width:18px;height:18px;padding:0}.price-detail-bubble{position:absolute;right:0;top:24px;width:250px;background:white;border:1px solid #ddd;padding:10px;z-index:5;text-align:left}
+/* Fine sizing for currency, compact benefits, and section controls. */
+.new-price small,.price-breakdown small,.trade-benefit-fixed small,.old-price small{font-weight:400}
+.trade-benefit-fixed{width:max-content;flex:0 0 auto;padding:7px 8px;gap:4px}.trade-benefit-fixed .benefit-value{gap:4px}.trade-benefit-fixed b{line-height:19px}
+.tag{font-size:10px;line-height:16px;padding:0 5px}
+[data-sheet="device"]{font-size:12px;min-height:20px;gap:3px}[data-sheet="device"]:after{width:12px;height:12px;flex-basis:12px;background-size:12px 12px}
+main>section:not(.new-card):not(.exchange){padding-top:8px}main>section:not(.new-card):not(.exchange) .section-heading{margin-bottom:8px}
+/* New and old products share one continuous card. */
+main>section.new-card{margin-bottom:0;border-bottom:0;padding-bottom:12px}
+main>section.new-card+section{border-top:0;padding-top:12px;position:relative}
+main>section.new-card+section:before{content:"";position:absolute;left:16px;right:16px;top:0;height:1px;background:#e5e5e5}
+/* Balanced section rhythm within the shared product card. */
+main>section.new-card{padding-bottom:20px}
+main>section.new-card+section{padding-top:20px;padding-bottom:16px}
+main>section.new-card+section .section-heading{margin-bottom:10px}
+.section-heading h2,.exchange>h2{font-size:14px;line-height:20px;font-weight:600;color:#333}
+.payment-explain{line-height:20px;color:#888}
+.old-copy p{line-height:20px;margin-bottom:6px}
+main>section.exchange{margin-top:14px;padding-top:14px}
+.exchange .method-note{margin:6px 0 10px;line-height:20px;color:#999}
+/* Tighten the new-product block and let the tooltip size to its content. */
+.new-card .section-heading{margin-bottom:6px}.new-card .new-thumb{width:64px;height:64px}.new-card .price-breakdown-wrap{margin-top:8px;padding-top:8px}.new-card .price-summary-info{top:134px}
+.price-detail-bubble{top:24px;bottom:auto;height:auto;min-height:0;max-height:none;line-height:20px;white-space:normal;overflow:visible;padding:10px 12px;z-index:20}
+/* Align the information icon and soften the payment notes. */
+.new-card .price-summary-info{top:116px}
+.new-card .payment-explain{margin-top:14px;font-size:11px;line-height:20px}
+/* White dialog chrome and a slightly higher product divider. */
+body>header{border-bottom:0;background:#fff}
+body>footer{border-top:0;background:#fff}
+main>section.new-card+section:before{top:-8px}
+/* Tighter amount captions and a shallower benefit box. */
+.price-breakdown b{line-height:21px}.price-breakdown span{margin-top:0;line-height:16px}
+.trade-benefit-fixed{padding:4px 8px;gap:2px}.trade-benefit-fixed b{line-height:17px}.trade-benefit-fixed .benefit-value>span{line-height:17px}
+/* Fit the narrower primary dialog without scaling text. */
+main{padding-left:16px;padding-right:16px}
+.new-card .new-product p{font-size:13px;line-height:20px}
+body>footer{height:60px;padding:0 20px}
+main{bottom:60px}
+/* Compact payment notes and align the account row. */
+.new-card .payment-explain{line-height:16px}
+.exchange .method-note{margin-bottom:4px}
+.exchange .account{min-height:36px;padding:4px 0;gap:10px}
+.exchange .account b{margin-left:auto}
+.exchange .account em{margin-left:0}
+.exchange .tabs{margin-top:6px}
+/* Remove redundant heading and anchor edit actions consistently. */
+.exchange>h3{display:none}
+#sheet:not(.time-picker-sheet) #sheet-content{padding-bottom:76px}
+#sheet:not(.time-picker-sheet) #save-sheet{position:fixed;right:20px;bottom:13px;width:120px;height:34px;margin:0}
+#sheet:not(.time-picker-sheet) #close-sheet{position:fixed;right:152px;bottom:13px;width:120px;height:34px;border:1px solid #ddd;background:white;font-size:13px;color:#666}
+#sheet:not(.time-picker-sheet) .sheet-head{padding-right:54px}
+/* Tight address guidance and consistent form hierarchy. */
+.exchange .field.address{min-height:34px;padding:4px 0 0;align-items:center}
+.exchange .address #address{font-size:13px;line-height:20px}
+.exchange .warning{margin:2px 0 4px;padding-top:0;padding-bottom:0;font-size:12px;line-height:18px}
+.exchange .field.time{min-height:38px;padding-top:4px;padding-bottom:4px}
+.exchange .field-label{font-size:13px;color:#666}
+.exchange .agreement{margin-top:10px;font-size:12px;line-height:18px}
+.exchange .steps{margin-top:12px;margin-bottom:10px}
+/* Match Lenovo's state-subsidy text color. */
+.price-breakdown .red,.new-card .tag{color:#019339}
+/* Invisible scrollbars, with scrolling preserved, and consistent form rhythm. */
+html,body,main,#sheet,.price-breakdown-scroll,.time-picker-dates,.time-picker-slots{scrollbar-width:none;-ms-overflow-style:none}
+html::-webkit-scrollbar,body::-webkit-scrollbar,main::-webkit-scrollbar,#sheet::-webkit-scrollbar,.price-breakdown-scroll::-webkit-scrollbar,.time-picker-dates::-webkit-scrollbar,.time-picker-slots::-webkit-scrollbar{display:none;width:0;height:0}
+main{padding-bottom:12px}.exchange .field{gap:10px}.exchange .field-label{flex-basis:68px}.exchange .field input{width:auto;flex:1;min-width:0}.exchange .field.address #address{flex:1;min-width:0}.exchange .warning{padding-left:78px;margin-top:2px;margin-bottom:4px}.exchange .steps{margin:12px auto 12px}.exchange .field.time{min-height:40px}.exchange .agreement{margin-top:10px;margin-bottom:2px}.exchange .account{gap:10px}main>section.exchange{padding-bottom:14px}
+/* Payment and refund are separate stages, preserving the headline price. */
+main>section.new-card,main>section.new-card+section,main>section.exchange{border:0}
+main>section.new-card{padding-bottom:16px}.new-card>.section-heading{display:none}.new-card .new-product{position:relative;padding-top:2px}.new-card .new-product p{font-weight:500}.new-card .new-price{margin-top:8px}
+.payment-stages{margin-top:22px}.payment-stage{position:relative;margin:0 0 20px;padding-left:26px;border:0;background:none}.payment-stage:last-child{margin-bottom:0}.stage-title{display:flex;align-items:flex-start;gap:10px;position:relative}.stage-title h2{font-size:15px;font-weight:600;line-height:22px}.stage-title p{margin:2px 0 8px;font-size:12px;color:#999}.stage-number{position:absolute;left:-26px;top:1px;width:20px;height:20px;border-radius:50%;background:var(--lenovo-red);color:#fff;text-align:center;font-size:13px;line-height:20px}.stage-number.muted{background:#999}.stage-total{margin-left:auto;font-size:12px;white-space:nowrap;padding-top:1px}.stage-total b{font-size:21px;color:var(--lenovo-red);margin-left:5px}.stage-total small{font-size:13px;font-weight:400}.stage-detail{display:grid;grid-template-columns:1fr 1fr 2.4fr;background:#f6f7f8;border-radius:5px;padding:12px 10px;gap:12px;align-items:center}.stage-detail>div+div{border-left:1px solid #ddd;padding-left:12px}.stage-detail span{display:block;color:#777;font-size:11px;line-height:17px}.stage-detail b{font-size:17px;line-height:23px}.stage-detail small{font-size:12px;font-weight:400}.conditional p{margin:3px 0 0;color:#019339;font-size:11px;white-space:nowrap}.conditional b{font-size:14px}.refund b{color:var(--lenovo-red)}.refund-note{font-size:11px;line-height:18px;color:#777}
+main>section.new-card+section:before{top:0}.old-product{padding-bottom:2px}main>section.new-card+section{padding-top:16px}.old-copy p{font-size:13px}.exchange{border-top:1px solid #e5e5e5!important}.exchange>h2{font-size:14px}.exchange .account{border-bottom:1px solid #eee;padding-bottom:8px;margin-bottom:10px}.sheet-head h2{font-weight:600}
+/* Reference-aligned stage layout: override inherited generic section styling. */
+.payment-stages{margin-top:20px;position:relative}
+.payment-stages>.payment-stage{display:block;position:relative;border:0;border-radius:0;padding:0 0 0 30px;margin:0 0 20px;background:transparent}
+.payment-stages>.payment-stage:last-child{margin:0}
+.payment-stages>.payment-stage:first-child:before{content:"";position:absolute;left:10px;top:24px;bottom:-18px;border-left:1px dashed #c9cbd0}
+.stage-title{min-height:39px;align-items:flex-start}
+.stage-number{left:-30px;top:0;width:22px;height:22px;line-height:22px;font-size:13px;z-index:1}
+.stage-title h2{font-size:15px;line-height:22px;font-weight:600}
+.stage-title p{font-size:12px;line-height:17px;margin:2px 0 7px}
+.stage-total{padding-top:0;font-size:12px;line-height:24px}.stage-total b{font-size:22px;line-height:24px}
+.stage-detail{grid-template-columns:1fr 1fr 2.25fr;padding:10px 16px;gap:12px;min-height:52px;background:#f8f9fa;border-radius:5px}
+.stage-detail>div+div{padding-left:14px}.stage-detail span{font-size:11px;line-height:17px}.stage-detail b{font-size:17px;line-height:22px}.conditional b{font-size:14px}.refund-note{font-size:11px;line-height:16px}
+main{padding-top:8px}.new-card .new-product{padding:0}.new-card .new-product p{margin-bottom:5px}.new-card .new-price{margin-top:0}
+main>section.new-card{padding-top:0;padding-bottom:14px}
+main>section.new-card+section{padding-top:14px;padding-bottom:14px}
+main>section.new-card+section .section-heading{margin-bottom:10px}
+.old-product{gap:16px}.old-product img{width:66px;height:44px;object-fit:contain;background:#f4f5f6;border-radius:4px}
+[data-sheet="device"]{color:#555}
+/* Lighter second step and more space before old-product information. */
+.stage-number.muted{background:#c8c8c8}
+main>section.new-card+section{padding-top:22px}
+/* Clear type hierarchy and neutral edit chevron. */
+[data-sheet="device"]:after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='m9 5 7 7-7 7' stroke='%23999999' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.new-card .new-product p{font-size:14px;line-height:21px;font-weight:500;margin-bottom:6px}.new-card .new-product{gap:14px}
+.payment-stages{margin-top:18px}.stage-title h2{font-size:15px;line-height:22px;font-weight:600}.stage-title p{font-size:12px;line-height:18px;color:#999;margin:2px 0 8px}.stage-total{font-size:12px;color:#666}.stage-total b{font-size:22px;font-weight:600}.stage-detail span{font-size:12px;line-height:18px;color:#888}.stage-detail b{font-size:17px;font-weight:600;line-height:24px}.stage-detail .conditional span{font-size:11px}.conditional p{margin-top:4px}.conditional b{font-size:14px}.refund-note{font-size:11px;line-height:18px;color:#888}.stage-detail{padding:10px 14px}.old-copy p{font-size:13px;line-height:20px;font-weight:400}.old-price span{font-size:12px;color:#999}.old-price b{font-size:19px}.old-copy p{margin-bottom:5px}
+/* Center old-product content between the two dividers. */
+main>section.new-card+section{padding-top:24px;padding-bottom:24px;margin-bottom:0}
+main>section.exchange{margin-top:0}
+/* Denser payment/refund detail panels with readable hierarchy. */
+.payment-stages .stage-detail{padding:7px 14px;min-height:46px;gap:12px}
+.payment-stages .stage-detail span{font-size:11px;line-height:16px}
+.payment-stages .stage-detail b{line-height:21px}
+.payment-stages .conditional p{margin-top:2px;line-height:19px}
+.payment-stages .refund-note{line-height:16px}
+.payment-stages .stage-detail>div+div{padding-left:14px}
+/* Equal divider-to-content spacing; outrank legacy section exclusions. */
+main>section.new-card+section:not(.new-card):not(.exchange){padding-top:20px;padding-bottom:20px;margin-top:0;margin-bottom:0}
+main>section.new-card+section:not(.exchange)::before{top:0}
+main>section.new-card+section:not(.exchange) .old-product{padding-bottom:0}
+main>section.new-card+section+section.exchange{margin-top:0}
+/* Balance detail-card breathing room and move the recovery form down. */
+.exchange .steps{margin-top:20px}
+.payment-stages .stage-detail{padding-top:10px;padding-bottom:10px}
+.payment-stages .conditional p{margin-top:0;line-height:17px}
+.payment-stages .stage-detail .conditional span{line-height:15px}
+.payment-stages .stage-detail b .coupon-minus{display:inline;font-size:inherit;font-weight:400;line-height:inherit;color:inherit;margin-right:4px}
+/* Optical centering in detail panels and stable recovery-step columns. */
+.payment-stages .stage-detail{padding-top:13px;padding-bottom:7px}
+.exchange .steps{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;max-width:none;align-items:start;margin:20px 0 12px}
+.exchange .steps>div{min-width:0;text-align:center;position:relative;z-index:1}
+.exchange .steps>div:nth-child(1){grid-column:1}.exchange .steps>div:nth-child(3){grid-column:2}.exchange .steps>div:nth-child(5){grid-column:3}
+.exchange .steps img{width:32px;height:32px;object-fit:contain;margin:0 auto 7px}
+.exchange .steps span{display:block;line-height:18px;white-space:nowrap}
+.exchange .steps>i{position:absolute;top:16px;margin:0;width:calc(33.333333% - 44px);border-top:1px dashed #ddd}
+.exchange .steps>i:nth-child(2){left:calc(16.666667% + 22px)}.exchange .steps>i:nth-child(4){left:calc(50% + 22px)}
+.time-picker-sheet .time-picker-head{padding-right:20px}
+/* Round agreement control aligned with the text baseline area. */
+.exchange .agreement{margin-top:18px;display:flex;align-items:center;gap:6px;line-height:20px}
+.exchange .agreement input{appearance:none;-webkit-appearance:none;box-sizing:border-box;display:block;flex:0 0 14px;width:14px;height:14px;margin:0;border:1px solid #aaa;border-radius:50%;background:#fff;cursor:pointer}
+.exchange .agreement input:checked{border-color:var(--lenovo-red);background:var(--lenovo-red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m4 8 2.5 2.5L12 5' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px 12px no-repeat}
+.exchange .agreement input:focus-visible{outline:2px solid #aaa;outline-offset:2px}
+.exchange .agreement>span{line-height:20px}
+/* Slightly smaller step markers, retaining their original center. */
+.stage-number{width:20px;height:20px;line-height:20px;font-size:12px;left:-29px;top:1px}
+/* Desktop appointment selector: date tabs, time grid, fixed bottom actions. */
+.time-picker-sheet .time-picker-head{height:50px;padding:0 24px;justify-content:flex-start;border-bottom:0;font-size:16px}
+.desktop-picker-body{padding:18px 24px 0}.pickup-label{display:inline-block;border:1px solid var(--lenovo-red);color:var(--lenovo-red);padding:6px 18px;margin-bottom:14px;font-size:13px}
+.time-picker-sheet .time-picker-dates{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));overflow:visible;border:1px solid #ddd}
+.time-picker-sheet .time-picker-dates .picker-option{height:50px;padding:4px;text-align:center;border:0;border-right:1px solid #ddd;font-size:12px;line-height:19px;background:#fff}
+.time-picker-sheet .time-picker-dates .picker-option:last-child{border-right:0}.time-picker-sheet .time-picker-dates .picker-option.active{background:#f6f6f6;color:#333}
+.time-picker-sheet .picker-option.active:after{display:none}
+.time-picker-sheet .time-picker-slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:18px 14px;background:#f6f6f6;border:1px solid #ddd;border-top:0;max-height:180px;overflow-y:auto}
+.time-picker-sheet .time-picker-slots .picker-option{height:34px;padding:0;text-align:center;background:#fff;border:1px solid #ddd;color:#666;font-size:12px}
+.time-picker-sheet .time-picker-slots .picker-option.active{border-color:var(--lenovo-red);color:var(--lenovo-red)}
+.time-picker-actions{position:fixed;bottom:16px;right:24px;display:flex;gap:12px;border-top:0;background:#fff}.time-picker-actions button{width:110px;height:34px;font-size:14px;border:1px solid var(--lenovo-red);border-radius:2px;color:var(--lenovo-red);background:#fff}.time-picker-actions #time-confirm{background:var(--lenovo-red);color:#fff}.time-picker-actions #time-confirm:disabled{background:#ddd;border-color:#ddd;color:#999;cursor:default}
+
+/* Agreement link uses dark gray. */
+.exchange .agreement .text-action{color:#333}
+
+.exchange #contact::placeholder{font-size:12px;font-weight:400;color:#aaa;-webkit-text-fill-color:#aaa;opacity:1}

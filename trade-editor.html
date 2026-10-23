@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>以旧换新</title><style>*{box-sizing:border-box}html,body{margin:0;height:100%;font:14px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","PingFang SC",sans-serif;color:#333;background:#fff}button,input{font:inherit;color:inherit}button{padding:0;border:0;background:none}button,input{pointer-events:none}header{height:58px;padding:0 28px;display:flex;align-items:center;border-bottom:1px solid #e5e5e5;background:#fff}header .back{display:none}h1{margin:0;font-size:20px;font-weight:500}h2{margin:0;font-size:16px;font-weight:500}h3{margin:18px 0 10px;font-size:12px;color:#777;font-weight:400}main{position:absolute;top:58px;bottom:76px;left:0;right:0;overflow:auto;padding:24px 28px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;gap:20px 28px;align-content:start;align-items:start}section{min-width:0;border:1px solid #e5e5e5;background:#fff;padding:20px;margin:0;border-radius:0}.new-card{grid-column:1;grid-row:1}.exchange{grid-column:2;grid-row:1 / 3}.section-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}.tag{font-size:12px;color:#139844;background:#f3faf5;padding:2px 8px;border:1px solid #d5eddd}.new-product{display:flex;gap:16px;align-items:center}.new-thumb{width:86px;height:86px;flex-shrink:0;background:#f8ead9;display:flex;flex-direction:column;justify-content:center;padding:10px;font-size:13px;color:#70512e}.new-product p{font-size:14px;line-height:22px;margin:0 0 10px}.new-price{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;color:var(--lenovo-red)}.new-price b{font-size:28px;line-height:32px}.new-price small{font-size:14px}.new-price>span{font-size:12px}.price-breakdown-wrap{margin-top:22px;padding-top:18px;border-top:1px solid #eee;display:flex;flex-wrap:wrap;gap:14px 8px;align-items:center}.price-breakdown-scroll{width:100%;overflow:visible}.price-breakdown{display:flex;align-items:center;justify-content:space-between;gap:5px}.price-breakdown div{text-align:center;white-space:nowrap}.price-breakdown b{font-size:19px;display:block;line-height:28px}.price-breakdown small{font-size:11px}.price-breakdown span{display:block;color:#999;font-size:12px;margin-top:2px}.price-breakdown i,.fixed-minus{font-style:normal;color:#aaa;font-size:14px}.price-breakdown .red{color:#149744}.fixed-minus{display:none}.trade-benefit-fixed{display:flex;width:100%;gap:28px;background:rgba(var(--lenovo-red-rgb),.03);border:1px solid rgba(var(--lenovo-red-rgb),.15);padding:10px 14px;color:#666;font-size:12px}.trade-benefit-fixed b{font-size:20px;color:var(--lenovo-red);margin-left:5px}.trade-benefit-fixed small{font-size:12px}.payment-explain{margin-top:16px;padding:0;color:#888;font-size:12px;line-height:21px}.payment-explain p{margin:0}.payment-explain b{color:var(--lenovo-red);font-weight:400}.price-summary-info{display:none}.old-product{display:flex;align-items:center;gap:16px}.old-product img{width:64px;height:64px;object-fit:cover;border-radius:0}.old-copy{flex:1}.old-copy p{margin:0 0 8px;font-size:14px}.old-price{display:flex;gap:10px;align-items:baseline}.old-price span{font-size:12px;color:#999}.old-price b{font-size:22px;color:var(--lenovo-red)}.old-price small{font-size:12px}.text-action{font-size:12px;color:var(--lenovo-red)}.method-note{margin:8px 0 10px;font-size:12px;color:#999}.field{width:100%;display:flex;align-items:center;gap:12px;min-height:46px;border:0;border-bottom:1px solid #eee;text-align:left;background:none;font-size:14px;padding:6px 0}.account{font-size:13px}.account b{font-weight:400;margin-left:auto}.field em{font-style:normal;color:#bbb;margin-left:auto}.tabs{display:flex;border-bottom:1px solid #ddd;gap:0;margin-top:16px}.tabs button{height:36px;min-width:106px;border:1px solid #ddd;margin-bottom:-1px;font-size:14px;background:#fafafa}.tabs button+button{border-left:0}.tabs .active{color:var(--lenovo-red);border-top:2px solid var(--lenovo-red);border-bottom-color:white;background:white}.steps{display:flex;align-items:flex-start;justify-content:space-between;margin:12px 0 18px}.steps div{text-align:center}.steps img{display:block;width:32px;height:32px;margin:0 auto 7px}.steps span{font-size:12px;color:#666}.steps i{flex:1;border-top:1px dashed #ddd;margin:16px 12px 0}.field-label{position:relative;flex:0 0 56px;color:#666;padding-left:10px}.required{position:absolute;left:0;color:var(--lenovo-red)}.field input{height:30px;width:calc(100% - 68px);border:1px solid #ddd;background:#fff;padding:0 10px;color:#333;opacity:1;-webkit-text-fill-color:#333}.field input::placeholder{color:#aaa;-webkit-text-fill-color:#aaa}.address{align-items:flex-start;padding:12px 0}.address #address{font-size:13px;line-height:21px}.warning{font-size:12px;color:var(--lenovo-red);margin:8px 0 2px;padding-left:68px}.time #time{color:#aaa;font-size:13px}.agreement{display:flex;align-items:center;gap:6px;font-size:12px;color:#777;margin-top:18px}.agreement input{margin:0;width:14px;height:14px}.agreement .text-action{font-size:12px}footer{position:absolute;bottom:0;left:0;right:0;height:76px;display:flex;align-items:center;justify-content:flex-end;gap:12px;padding:0 28px;border-top:1px solid #e5e5e5;background:#fafafa}footer button{height:38px;width:136px;font-size:14px;border:1px solid var(--lenovo-red);color:var(--lenovo-red);border-radius:0;background:white}footer button:last-child{background:var(--lenovo-red);color:#fff}#toast,dialog{display:none}[hidden]{display:none!important}
+/* Compact desktop variant; preserve readable type instead of scaling the iframe. */
+header{height:50px;padding:0 24px}h1{font-size:18px}main{top:50px;bottom:64px;padding:18px 24px;gap:16px 20px}section{padding:16px}h2{font-size:14px}.section-heading{margin-bottom:14px}.new-product{gap:12px}.new-thumb{width:64px;height:70px;font-size:11px;padding:8px}.new-product p{font-size:12px;line-height:19px}.new-price{gap:5px}.new-price b{font-size:26px}.new-price>span{font-size:11px}.price-breakdown-wrap{margin-top:16px;padding-top:14px;gap:10px}.price-breakdown b{font-size:16px}.price-breakdown span{font-size:11px}.trade-benefit-fixed{gap:14px;padding:8px}.trade-benefit-fixed b{font-size:17px;margin-left:2px}.payment-explain{margin-top:12px;font-size:12px;line-height:20px}.old-product{gap:12px}.old-product img{width:48px;height:48px}.old-copy p{font-size:12px;line-height:19px}.old-price{gap:6px}.old-price b{font-size:19px}.field{font-size:12px;min-height:42px;gap:8px}.field-label{flex-basis:48px}.field input{width:calc(100% - 56px);font-size:12px}.address #address{font-size:12px}.warning{padding-left:56px;line-height:19px}.tabs{margin-top:12px}.tabs button{height:32px;min-width:96px;font-size:12px}.steps{margin:10px 0 14px}.agreement{align-items:flex-start;line-height:20px}.agreement input{margin-top:3px;flex-shrink:0}footer{height:64px;padding:0 24px}footer button{width:120px;height:34px;font-size:14px}
+/* Interactive desktop controls and nested dialogs. */
+button,input{pointer-events:auto}button{cursor:pointer}button:disabled{cursor:default;color:#aaa}.field input:focus,.sheet-input:focus{outline:none;border-color:var(--lenovo-red)}.time.chosen #time{color:#333}.tabs button:hover,.text-action:hover{color:var(--lenovo-red)}.price-summary-info{display:block;position:relative;margin-top:4px;text-align:right}.price-detail-toggle{color:#999;font-size:15px}.price-detail-bubble{position:absolute;right:0;bottom:25px;width:280px;padding:12px;text-align:left;background:white;border:1px solid #ddd;box-shadow:0 3px 12px #0002;z-index:8;color:#666;font-size:12px}#sheet{position:fixed;inset:0;margin:auto;width:480px;max-width:calc(100vw - 48px);max-height:calc(100vh - 40px);height:auto;border:1px solid #ddd;border-radius:0;padding:0;background:white;box-shadow:0 12px 40px #0003;color:#333}#sheet[open]{display:block}#sheet::backdrop{background:#0005}.sheet-head{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #eee}.sheet-head h2{font-size:16px}.sheet-head button{font-size:22px;color:#999}#sheet-content{padding:22px}.addr-sheet .sheet-head{border-bottom:0;padding:22px 24px}.addr-sheet .sheet-head h2{font-size:17px;font-weight:700}.addr-sheet .sheet-head button{width:auto;height:auto;border-radius:0;background:transparent;color:#999;font-size:22px;border:0;padding:0;line-height:1}body #sheet.addr-sheet:not(.time-picker-sheet) #close-sheet{position:static;right:auto;bottom:auto;width:auto;height:auto;border-radius:0;background:transparent;color:#999;font-size:22px;border:0;padding:0;line-height:1}#sheet-content .addr-card{background:#f7f8fa;border-radius:12px;padding:16px 20px;margin-bottom:14px}.addr-card-head{display:flex;justify-content:space-between;align-items:center}.addr-card-head .lbl{font-size:13px;color:#999}.addr-card-head .hint{font-size:12px;color:#c0c0c0}.addr-tabs{display:flex;margin-top:12px;border-bottom:1px solid #e8e8e8}.addr-tabs button{flex:1;height:36px;border:0;background:none;font-size:14px;color:#333;position:relative;padding:0}.addr-tabs button.active{color:var(--lenovo-red);font-weight:600}.addr-tabs button.active:after{content:'';position:absolute;left:50%;transform:translateX(-50%);bottom:-1px;width:72px;max-width:80%;height:2px;background:var(--lenovo-red)}.addr-opts{max-height:190px;overflow:auto}.addr-opts button{display:flex;justify-content:space-between;align-items:center;width:100%;height:46px;border:0;background:none;border-bottom:1px solid #ececec;font-size:14px;color:#333;text-align:left;padding:0}.addr-opts button:last-child{border-bottom:0}.addr-opts button.selected{color:var(--lenovo-red);font-weight:600}.addr-opts .tick{font-size:14px}.addr-detail-input{width:100%;border:0;background:transparent;font-size:15px;color:#333;padding:12px 0 2px}.addr-detail-input:focus{outline:none;box-shadow:none}.addr-confirm{display:block;width:100%;height:48px;border:0;border-radius:999px;background:var(--lenovo-red);color:#fff;font-size:15px;margin-top:6px;cursor:pointer}.addr-confirm:hover{filter:brightness(1.05)}.sheet-input{width:100%;height:36px;border:1px solid #ddd;padding:0 10px;font-size:13px}.confirm{display:block;width:100px;height:34px;background:var(--lenovo-red);color:white;margin:20px 0 0 auto;border:0}.sheet-help{font-size:13px;line-height:24px;margin:0}.time-picker-sheet .sheet-head{display:none}.time-picker-sheet #sheet-content{padding:0}.time-picker-head{display:flex;align-items:center;justify-content:space-between;height:54px;padding:0 20px;border-bottom:1px solid #eee;font-size:14px}.time-picker-head b{font-weight:500}.time-picker-head button{font-size:13px}.time-picker-head button:last-child:not(:disabled){color:var(--lenovo-red)}.time-picker-columns{display:grid;grid-template-columns:1fr 1fr;height:300px}.picker-column{min-width:0;display:flex;flex-direction:column}.picker-column+ .picker-column{border-left:1px solid #eee}.picker-column>p{margin:0;padding:10px 16px;background:#fafafa;font-size:12px;color:#999}.time-picker-dates,.time-picker-slots{overflow:auto;flex:1}.picker-option{display:block;width:100%;height:42px;text-align:left;padding:0 18px;border-bottom:1px solid #f2f2f2;font-size:13px}.picker-option:hover{background:#fafafa}.picker-option.active{background:rgba(var(--lenovo-red-rgb),.05);color:var(--lenovo-red)}.picker-option.active:after{content:'✓';float:right}#toast:not([hidden]){display:block;position:fixed;z-index:99999;left:50%;top:46%;transform:translate(-50%,-50%);padding:12px 20px;background:#333e;color:#fff;font-size:13px;max-width:80%;text-align:center}.agreement input{accent-color:var(--lenovo-red)}
+#sheet{height:fit-content;min-height:0}
+/* Single-column desktop flow. */
+main{display:block;padding:20px 24px}main>section{margin:0 0 18px;padding:18px 20px}.new-card,.exchange{grid-column:auto;grid-row:auto}.new-product p{font-size:14px;line-height:22px}.new-thumb{width:76px;height:76px}.new-product{gap:18px}.price-breakdown{justify-content:flex-start;gap:20px}.price-breakdown-wrap{margin-top:18px}.trade-benefit-fixed{gap:28px}.old-copy p{font-size:14px}.exchange .steps{max-width:450px;margin:14px auto 20px}.field{min-height:46px;font-size:14px}.field-label{flex-basis:70px}.field input{width:calc(100% - 78px);font-size:14px}.warning{padding-left:78px}.address #address{font-size:14px}.agreement{margin-top:20px}
+
+/* Price hierarchy and in-place editing views. */
+.price-breakdown{justify-content:space-between;gap:10px}.price-breakdown b{font-size:18px}.price-breakdown-wrap{gap:16px}.trade-benefit-fixed{background:rgba(var(--lenovo-red-rgb),.03);border:1px solid rgba(var(--lenovo-red-rgb),.15);padding:14px 18px;gap:40px}.trade-benefit-fixed>span{display:flex;align-items:center;gap:16px;flex:1}.trade-benefit-fixed i{font-style:normal;font-size:20px;color:var(--lenovo-red)}.trade-benefit-fixed .benefit-value{display:flex;flex-direction:column;gap:3px}.trade-benefit-fixed b{margin:0;font-size:20px;line-height:24px}.trade-benefit-fixed .benefit-value>span{font-size:12px;color:#777}.payment-explain{color:#888;line-height:22px;margin-top:12px}
+body.sheet-view>header,body.sheet-view>main,body.sheet-view>footer{visibility:hidden;pointer-events:none}
+#sheet{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;min-height:100%;margin:0;border:0;box-shadow:none;outline:none;background:#fff;overflow:auto}
+.sheet-head{height:50px;padding:0 54px 0 24px}.sheet-head button{font-size:13px;color:#666}#sheet-content{padding:24px}.time-picker-head{height:50px;padding:0 54px 0 24px}.time-picker-columns{height:calc(100vh - 50px)}.picker-column>p{padding:14px 24px}.picker-option{height:52px;padding:0 24px}.time-picker-sheet #sheet-content{padding:0}
+
+/* Consistent vector icons and quieter form chrome. */
+.picker-option{position:relative;padding-right:48px}
+.picker-option.active:after{content:"";position:absolute;right:22px;top:50%;width:18px;height:18px;transform:translateY(-50%);background:center/18px 18px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='m5 12 4 4L19 6' stroke='%23d72c2c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+[data-sheet="device"]{display:inline-flex;align-items:center;gap:6px;min-height:28px;font-size:13px}
+[data-sheet="device"]:after,.field em{content:"";display:inline-block;width:16px;height:16px;flex:0 0 16px;align-self:center;background:center/16px 16px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='m9 5 7 7-7 7' stroke='%23999999' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+[data-sheet="device"]:after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='m9 5 7 7-7 7' stroke='%23d72c2c' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.new-card{border:0;padding-top:8px}
+.exchange .field{border-bottom:0}
+
+.time-picker-sheet .picker-option{height:44px}.time-picker-sheet .picker-column>p{padding:10px 20px}.time-picker-sheet .time-picker-head{padding-left:20px}
+/* Compact price equation with fixed trade-in benefits. */
+main{padding:18px 24px}main>section{margin-bottom:16px;padding:16px 18px}.new-card{border:1px solid #e5e5e5}.section-heading{margin-bottom:14px}.new-product{gap:16px}.price-breakdown-wrap{display:flex;flex-wrap:nowrap;gap:8px;margin-top:16px;padding-top:16px}.price-breakdown-scroll{width:auto;flex:1;min-width:0;overflow-x:auto}.price-breakdown{justify-content:space-between;gap:7px;min-width:388px}.price-breakdown b{font-size:16px}.price-breakdown span{font-size:11px}.price-breakdown i{font-size:13px}.fixed-minus{display:none}.trade-benefit-fixed{width:160px;flex:0 0 160px;display:flex;flex-direction:column;gap:5px;padding:8px 10px;border:1px solid rgba(var(--lenovo-red-rgb),.3);border-radius:4px;background:rgba(var(--lenovo-red-rgb),.03)}.trade-benefit-fixed>span{display:flex;flex:none;gap:5px;align-items:center}.trade-benefit-fixed i{font-size:14px}.trade-benefit-fixed .benefit-value{flex:1;display:flex;flex-direction:row-reverse;align-items:baseline;justify-content:space-between;gap:4px}.trade-benefit-fixed .benefit-value>span{font-size:11px;color:var(--lenovo-red);white-space:nowrap}.trade-benefit-fixed b{font-size:15px;line-height:20px;white-space:nowrap}.trade-benefit-fixed small{font-size:11px}.payment-explain{margin-top:12px;line-height:20px}.old-product{gap:14px}
+/* Keep both time columns independently scrollable in the compact dialog. */
+.time-picker-columns{height:calc(100vh - 50px);min-height:0;overflow:hidden}.picker-column{min-height:0;overflow:hidden}.picker-column>p{flex-shrink:0}.time-picker-dates,.time-picker-slots{min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}.time-picker-sheet .picker-option{height:48px;flex-shrink:0}
+/* Tighter desktop spacing and neutral input focus. */
+main{padding:14px 20px}main>section{padding:12px 16px;margin-bottom:12px}.section-heading{margin-bottom:8px}.new-product{gap:12px}.new-product p{margin-bottom:6px}.new-thumb{width:68px;height:68px}.price-breakdown-wrap{margin-top:12px;padding-top:12px;gap:8px}.price-breakdown{justify-content:flex-start;gap:10px;min-width:0}.price-breakdown>div{flex:1}.price-breakdown>i{flex:0 0 auto}.price-breakdown>i:first-child{margin-right:0}.payment-explain{margin-top:8px;line-height:19px}.old-product{gap:12px}.old-product img{width:48px;height:48px}.old-copy p{margin-bottom:4px}.exchange .method-note{margin:6px 0 8px}.exchange .steps{margin:10px auto 12px}.exchange h3{margin:12px 0 6px}.field{min-height:46px;padding:4px 0}.field input{height:36px}.field input:focus,.sheet-input:focus{border-color:#ddd;outline:none;box-shadow:none}.field input:focus-visible,.sheet-input:focus-visible{outline:none}.address{padding:8px 0}.warning{margin:4px 0 6px}.agreement{margin-top:12px}
+/* Compact equation: one subtraction sign before the benefit group. */
+.price-breakdown-wrap{justify-content:flex-start;gap:8px}.price-breakdown-scroll{flex:0 1 auto;width:auto}.price-breakdown{gap:8px}.price-breakdown>div{flex:0 0 auto;min-width:66px}.price-breakdown>div:nth-of-type(3){min-width:82px}.price-breakdown>i{margin:0}.fixed-minus{display:block;flex:0 0 auto;font-style:normal;color:#aaa;font-size:14px}.trade-benefit-fixed{width:148px;flex:0 0 148px;padding:8px 10px}.trade-benefit-fixed>span>i{display:none}
+/* Close-set operators and benefit labels; explanation icon above the prices. */
+.price-breakdown-wrap{position:relative;gap:4px;padding-right:24px}.price-breakdown{gap:4px}.price-breakdown>div{min-width:56px}.price-breakdown>div:nth-of-type(3){min-width:72px}.trade-benefit-fixed{width:120px;flex-basis:120px;padding:8px}.trade-benefit-fixed .benefit-value{flex:none;gap:6px;justify-content:flex-start}.trade-benefit-fixed>span{justify-content:flex-start}.new-card{position:relative}.payment-explain{position:static}.price-summary-info{position:absolute;top:146px;right:16px;margin:0;line-height:18px}.price-detail-toggle{width:18px;height:18px;padding:0}.price-detail-bubble{position:absolute;right:0;top:24px;width:250px;background:white;border:1px solid #ddd;padding:10px;z-index:5;text-align:left}
+/* Fine sizing for currency, compact benefits, and section controls. */
+.new-price small,.price-breakdown small,.trade-benefit-fixed small,.old-price small{font-weight:400}
+.trade-benefit-fixed{width:max-content;flex:0 0 auto;padding:7px 8px;gap:4px}.trade-benefit-fixed .benefit-value{gap:4px}.trade-benefit-fixed b{line-height:19px}
+.tag{font-size:10px;line-height:16px;padding:0 5px}
+[data-sheet="device"]{font-size:12px;min-height:20px;gap:3px}[data-sheet="device"]:after{width:12px;height:12px;flex-basis:12px;background-size:12px 12px}
+main>section:not(.new-card):not(.exchange){padding-top:8px}main>section:not(.new-card):not(.exchange) .section-heading{margin-bottom:8px}
+/* New and old products share one continuous card. */
+main>section.new-card{margin-bottom:0;border-bottom:0;padding-bottom:12px}
+main>section.new-card+section{border-top:0;padding-top:12px;position:relative}
+main>section.new-card+section:before{content:"";position:absolute;left:16px;right:16px;top:0;height:1px;background:#e5e5e5}
+/* Balanced section rhythm within the shared product card. */
+main>section.new-card{padding-bottom:20px}
+main>section.new-card+section{padding-top:20px;padding-bottom:16px}
+main>section.new-card+section .section-heading{margin-bottom:10px}
+.section-heading h2,.exchange>h2{font-size:14px;line-height:20px;font-weight:600;color:#333}
+.payment-explain{line-height:20px;color:#888}
+.old-copy p{line-height:20px;margin-bottom:6px}
+main>section.exchange{margin-top:14px;padding-top:14px}
+.exchange .method-note{margin:6px 0 10px;line-height:20px;color:#999}
+/* Tighten the new-product block and let the tooltip size to its content. */
+.new-card .section-heading{margin-bottom:6px}.new-card .new-thumb{width:64px;height:64px}.new-card .price-breakdown-wrap{margin-top:8px;padding-top:8px}.new-card .price-summary-info{top:134px}
+.price-detail-bubble{top:24px;bottom:auto;height:auto;min-height:0;max-height:none;line-height:20px;white-space:normal;overflow:visible;padding:10px 12px;z-index:20}
+/* Align the information icon and soften the payment notes. */
+.new-card .price-summary-info{top:116px}
+.new-card .payment-explain{margin-top:14px;font-size:11px;line-height:20px}
+/* White dialog chrome and a slightly higher product divider. */
+body>header{border-bottom:0;background:#fff}
+body>footer{border-top:0;background:#fff}
+main>section.new-card+section:before{top:-8px}
+/* Tighter amount captions and a shallower benefit box. */
+.price-breakdown b{line-height:21px}.price-breakdown span{margin-top:0;line-height:16px}
+.trade-benefit-fixed{padding:4px 8px;gap:2px}.trade-benefit-fixed b{line-height:17px}.trade-benefit-fixed .benefit-value>span{line-height:17px}
+/* Fit the narrower primary dialog without scaling text. */
+main{padding-left:16px;padding-right:16px}
+.new-card .new-product p{font-size:13px;line-height:20px}
+body>footer{height:60px;padding:0 20px}
+main{bottom:60px}
+/* Compact payment notes and align the account row. */
+.new-card .payment-explain{line-height:16px}
+.exchange .method-note{margin-bottom:4px}
+.exchange .account{min-height:36px;padding:4px 0;gap:10px}
+.exchange .account b{margin-left:auto}
+.exchange .account em{margin-left:0}
+.exchange .tabs{margin-top:6px}
+/* Remove redundant heading and anchor edit actions consistently. */
+.exchange>h3{display:none}
+#sheet:not(.time-picker-sheet) #sheet-content{padding-bottom:76px}
+#sheet:not(.time-picker-sheet) #save-sheet{position:fixed;right:20px;bottom:13px;width:120px;height:34px;margin:0}
+#sheet:not(.time-picker-sheet) #close-sheet{position:fixed;right:152px;bottom:13px;width:120px;height:34px;border:1px solid #ddd;background:white;font-size:13px;color:#666}
+#sheet:not(.time-picker-sheet) .sheet-head{padding-right:54px}
+/* Tight address guidance and consistent form hierarchy. */
+.exchange .field.address{min-height:34px;margin-top:2px;padding:4px 0 0;align-items:flex-start}
+.exchange .address #address{font-size:13px;line-height:20px}
+.exchange .field.address em{align-self:flex-start;margin-top:2px}
+.exchange .warning{margin:2px 0 4px;padding-top:0;padding-bottom:0;font-size:12px;line-height:18px}
+.exchange .field.time{min-height:38px;padding-top:4px;padding-bottom:4px}
+.exchange .field-label{font-size:13px;color:#666}
+.exchange .agreement{margin-top:10px;font-size:12px;line-height:18px}
+.exchange .steps{margin-top:12px;margin-bottom:10px}
+/* Match Lenovo's state-subsidy text color. */
+.price-breakdown .red,.new-card .tag{color:#019339}
+/* Invisible scrollbars, with scrolling preserved, and consistent form rhythm. */
+html,body,main,#sheet,.price-breakdown-scroll,.time-picker-dates,.time-picker-slots{scrollbar-width:none;-ms-overflow-style:none}
+html::-webkit-scrollbar,body::-webkit-scrollbar,main::-webkit-scrollbar,#sheet::-webkit-scrollbar,.price-breakdown-scroll::-webkit-scrollbar,.time-picker-dates::-webkit-scrollbar,.time-picker-slots::-webkit-scrollbar{display:none;width:0;height:0}
+main{padding-bottom:12px}.exchange .field{gap:10px}.exchange .field-label{flex-basis:68px}.exchange .field input{width:auto;flex:1;min-width:0}.exchange .field.address #address{flex:1;min-width:0}.exchange .warning{padding-left:78px;margin-top:2px;margin-bottom:4px}.exchange .steps{margin:12px auto 12px}.exchange .field.time{min-height:40px}.exchange .agreement{margin-top:10px;margin-bottom:2px}.exchange .account{gap:10px}main>section.exchange{padding-bottom:14px}
+/* Payment and refund are separate stages, preserving the headline price. */
+main>section.new-card,main>section.new-card+section,main>section.exchange{border:0}
+main>section.new-card{padding-bottom:16px}.new-card>.section-heading{display:none}.new-card .new-product{position:relative;padding-top:2px}.new-card .new-product p{font-weight:500}.new-card .new-price{margin-top:8px}
+.payment-stages{margin-top:22px}.payment-stage{position:relative;margin:0 0 20px;padding-left:26px;border:0;background:none}.payment-stage:last-child{margin-bottom:0}.stage-title{display:flex;align-items:flex-start;gap:10px;position:relative}.stage-title h2{font-size:15px;font-weight:600;line-height:22px}.stage-title p{margin:2px 0 8px;font-size:12px;color:#999}.stage-number{position:absolute;left:-26px;top:1px;width:20px;height:20px;border-radius:50%;background:var(--lenovo-red);color:#fff;text-align:center;font-size:13px;line-height:20px}.stage-number.muted{background:#999}.stage-total{margin-left:auto;font-size:12px;white-space:nowrap;padding-top:1px}.stage-total b{font-size:21px;color:var(--lenovo-red);margin-left:5px}.stage-total small{font-size:13px;font-weight:400}.stage-detail{display:grid;grid-template-columns:1fr 1fr 2.4fr;background:#f6f7f8;border-radius:5px;padding:12px 10px;gap:12px;align-items:center}.stage-detail>div+div{border-left:1px solid #ddd;padding-left:12px}.stage-detail span{display:block;color:#777;font-size:11px;line-height:17px}.stage-detail b{font-size:17px;line-height:23px}.stage-detail small{font-size:12px;font-weight:400}.conditional p{margin:3px 0 0;color:#019339;font-size:11px;white-space:nowrap}.conditional b{font-size:14px}.refund b{color:var(--lenovo-red)}.refund-note{font-size:11px;line-height:18px;color:#777}
+main>section.new-card+section:before{top:0}.old-product{padding-bottom:2px}main>section.new-card+section{padding-top:16px}.old-copy p{font-size:13px}.exchange{border-top:0!important}.exchange>h2{font-size:14px}.exchange .account{border-bottom:0;padding-bottom:8px;margin-bottom:10px}.sheet-head h2{font-weight:600}
+/* Reference-aligned stage layout: override inherited generic section styling. */
+.payment-stages{margin-top:20px;position:relative}
+.payment-stages>.payment-stage{display:block;position:relative;border:0;border-radius:0;padding:0 0 0 30px;margin:0 0 20px;background:transparent}
+.payment-stages>.payment-stage:last-child{margin:0}
+.payment-stages>.payment-stage:first-child:before{content:"";position:absolute;left:10px;top:24px;bottom:-18px;border-left:1px dashed #c9cbd0}
+.stage-title{min-height:39px;align-items:flex-start}
+.stage-number{left:-30px;top:0;width:22px;height:22px;line-height:22px;font-size:13px;z-index:1}
+.stage-title h2{font-size:15px;line-height:22px;font-weight:600}
+.stage-title p{font-size:12px;line-height:17px;margin:2px 0 7px}
+.stage-total{align-self:flex-end;margin-bottom:8px;padding-top:0;font-size:12px;line-height:24px}.stage-total b{font-size:22px;line-height:24px}
+.stage-detail{grid-template-columns:1fr 1fr 2.25fr;padding:10px 16px;gap:12px;min-height:52px;background:#f8f9fa;border-radius:5px}
+.stage-detail>div+div{padding-left:14px}.stage-detail span{font-size:11px;line-height:17px}.stage-detail b{font-size:17px;line-height:22px}.conditional b{font-size:14px}.refund-note{font-size:11px;line-height:16px}
+main{padding-top:8px}.new-card .new-product{padding:0}.new-card .new-product p{margin-bottom:5px}.new-card .new-price{margin-top:0}
+main>section.new-card{padding-top:0;padding-bottom:14px}
+main>section.new-card+section{padding-top:14px;padding-bottom:14px}
+main>section.new-card+section .section-heading{margin-bottom:10px}
+.old-product{gap:16px}.old-product img{width:66px;height:44px;object-fit:contain;background:#f4f5f6;border-radius:4px}
+[data-sheet="device"]{color:#555}
+/* Lighter second step and more space before old-product information. */
+.stage-number.muted{background:#c8c8c8}
+main>section.new-card+section{padding-top:22px}
+/* Clear type hierarchy and neutral edit chevron. */
+[data-sheet="device"]:after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='m9 5 7 7-7 7' stroke='%23999999' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.new-card .new-product p{font-size:14px;line-height:21px;font-weight:500;margin-bottom:6px}.new-card .new-product{gap:14px}
+.payment-stages{margin-top:18px}.stage-title h2{font-size:15px;line-height:22px;font-weight:600}.stage-title p{font-size:12px;line-height:18px;color:#999;margin:2px 0 8px}.stage-total{font-size:12px;color:#666}.stage-total b{font-size:22px;font-weight:600}.stage-detail span{font-size:12px;line-height:18px;color:#888}.stage-detail b{font-size:17px;font-weight:600;line-height:24px}.stage-detail .conditional span{font-size:11px}.conditional p{margin-top:4px}.conditional b{font-size:14px}.refund-note{font-size:11px;line-height:18px;color:#888}.stage-detail{padding:10px 14px}.old-copy p{font-size:13px;line-height:20px;font-weight:400}.old-price span{font-size:12px;color:#999}.old-price b{font-size:19px}.old-copy p{margin-bottom:5px}
+/* Center old-product content between the two dividers. */
+main>section.new-card+section{padding-top:24px;padding-bottom:24px;margin-bottom:0}
+main>section.exchange{margin-top:0}
+/* Denser payment/refund detail panels with readable hierarchy. */
+.payment-stages .stage-detail{padding:7px 14px;min-height:46px;gap:12px}
+.payment-stages .stage-detail span{font-size:11px;line-height:16px}
+.payment-stages .stage-detail b{line-height:21px}
+.payment-stages .conditional p{margin-top:2px;line-height:19px}
+.payment-stages .refund-note{line-height:16px}
+.payment-stages .stage-detail>div+div{padding-left:14px}
+/* Equal divider-to-content spacing; outrank legacy section exclusions. */
+main>section.new-card+section:not(.new-card):not(.exchange){padding-top:20px;padding-bottom:20px;margin-top:0;margin-bottom:0}
+main>section.new-card+section:not(.exchange)::before{top:0}
+main>section.new-card+section:not(.exchange) .old-product{padding-bottom:0}
+main>section.new-card+section+section.exchange{margin-top:0}
+/* Balance detail-card breathing room and move the recovery form down. */
+.exchange .steps{margin-top:20px}
+.payment-stages .stage-detail{padding-top:10px;padding-bottom:10px}
+.payment-stages .conditional p{margin-top:0;line-height:17px}
+.payment-stages .stage-detail .conditional span{line-height:15px}
+.payment-stages .stage-detail b .coupon-minus{display:inline;font-size:inherit;font-weight:400;line-height:inherit;color:inherit;margin-right:4px}
+/* Optical centering in detail panels and stable recovery-step columns. */
+.payment-stages .stage-detail{padding-top:13px;padding-bottom:7px}
+.exchange .steps{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;max-width:none;align-items:start;margin:20px 0 12px}
+.exchange .steps>div{min-width:0;text-align:center;position:relative;z-index:1}
+.exchange .steps>div:nth-child(1){grid-column:1}.exchange .steps>div:nth-child(3){grid-column:2}.exchange .steps>div:nth-child(5){grid-column:3}
+.exchange .steps img{width:32px;height:32px;object-fit:contain;margin:0 auto 7px}
+.exchange .steps span{display:block;line-height:18px;white-space:nowrap}
+.exchange .steps>i{position:absolute;top:16px;margin:0;width:calc(33.333333% - 44px);border-top:1px dashed #ddd}
+.exchange .steps>i:nth-child(2){left:calc(16.666667% + 22px)}.exchange .steps>i:nth-child(4){left:calc(50% + 22px)}
+.time-picker-sheet .time-picker-head{padding-right:20px}
+/* Round agreement control aligned with the text baseline area. */
+.exchange .agreement{margin-top:18px;display:flex;align-items:center;gap:6px;line-height:20px}
+.exchange .agreement input{appearance:none;-webkit-appearance:none;box-sizing:border-box;display:block;flex:0 0 14px;width:14px;height:14px;margin:0;border:1px solid #aaa;border-radius:50%;background:#fff;cursor:pointer}
+.exchange .agreement input:checked{border-color:var(--lenovo-red);background:var(--lenovo-red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m4 8 2.5 2.5L12 5' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px 12px no-repeat}
+.exchange .agreement input:focus-visible{outline:2px solid #aaa;outline-offset:2px}
+.exchange .agreement>span{line-height:20px}
+/* Slightly smaller step markers, retaining their original center. */
+.stage-number{width:20px;height:20px;line-height:20px;font-size:12px;left:-29px;top:1px}
+/* Desktop appointment selector: date tabs, time grid, fixed bottom actions. */
+.time-picker-sheet .time-picker-head{height:50px;padding:0 24px;justify-content:flex-start;border-bottom:0;font-size:16px}
+.desktop-picker-body{padding:18px 24px 0}.pickup-label{display:inline-block;border:1px solid var(--lenovo-red);color:var(--lenovo-red);padding:6px 18px;margin-bottom:14px;font-size:13px}
+.time-picker-sheet .time-picker-dates{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));overflow:visible;border:1px solid #ddd}
+.time-picker-sheet .time-picker-dates .picker-option{height:50px;padding:4px;text-align:center;border:0;border-right:1px solid #ddd;font-size:12px;line-height:19px;background:#fff}
+.time-picker-sheet .time-picker-dates .picker-option:last-child{border-right:0}.time-picker-sheet .time-picker-dates .picker-option.active{background:#f6f6f6;color:#333}
+.time-picker-sheet .picker-option.active:after{display:none}
+.time-picker-sheet .time-picker-slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:18px 14px;background:#f6f6f6;border:1px solid #ddd;border-top:0;max-height:180px;overflow-y:auto}
+.time-picker-sheet .time-picker-slots .picker-option{height:34px;padding:0;text-align:center;background:#fff;border:1px solid #ddd;color:#666;font-size:12px}
+.time-picker-sheet .time-picker-slots .picker-option.active{border-color:var(--lenovo-red);color:var(--lenovo-red)}
+.time-picker-actions{position:fixed;bottom:16px;right:24px;display:flex;gap:12px;border-top:0;background:#fff}.time-picker-actions button{width:110px;height:34px;font-size:14px;border:1px solid var(--lenovo-red);border-radius:2px;color:var(--lenovo-red);background:#fff}.time-picker-actions #time-confirm{background:var(--lenovo-red);color:#fff}.time-picker-actions #time-confirm:disabled{background:#ddd;border-color:#ddd;color:#999;cursor:default}
+
+/* Agreement link uses dark gray. */
+.exchange .agreement .text-action{color:#333}
+.exchange .agreement .text-action:hover{color:var(--lenovo-red)}
+</style><style>
+.exchange #contact::placeholder{font-size:12px;font-weight:400;color:#aaa;-webkit-text-fill-color:#aaa;opacity:1}
+</style><style>
+/* Standalone trade-in page. The product detail modal keeps its own embedded copy. */
+html{height:auto;min-height:100%;background:#f5f5f5}
+body.standalone-page{height:auto;min-height:100vh;min-width:1080px;padding-bottom:0;background:#f5f5f5;color:#333}
+body.standalone-page>header{position:sticky;top:0;z-index:30;height:72px;padding:0;border-bottom:1px solid #ececec;background:#fff;box-shadow:none}
+body.standalone-page .trade-header-inner{width:1200px;max-width:calc(100% - 64px);height:72px;margin:0 auto;display:flex;align-items:center}
+body.standalone-page .trade-brand{display:flex;align-items:center;color:#1f1f1f;text-decoration:none}
+body.standalone-page .trade-brand img{display:block;width:178px;height:auto}
+body.standalone-page .trade-brand-divider{width:1px;height:24px;margin:0 22px;background:#dedede}
+body.standalone-page .trade-brand-title{font-size:17px;font-weight:500}
+body.standalone-page .trade-header-spacer{flex:1}
+body.standalone-page .trade-header-link{margin-left:30px;color:#666;font-size:13px;text-decoration:none}
+body.standalone-page .trade-header-link:hover{color:var(--lenovo-red)}
+body.standalone-page>main{position:relative;inset:auto;display:grid;grid-template-columns:minmax(0,1.16fr) minmax(420px,.84fr);grid-template-rows:auto auto;align-items:start;width:calc(100% - 64px);max-width:1200px;min-height:0;margin:24px auto;padding:0;overflow:visible;gap:20px}
+body.standalone-page>main>section{margin:0;padding:22px 24px;border:0;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+body.standalone-page>main>.new-card{grid-column:1;grid-row:1}
+body.standalone-page>main>.new-card+section:not(.exchange){grid-column:1;grid-row:2;padding:22px 24px}
+body.standalone-page>main>.new-card+section:not(.exchange):before{display:none}
+body.standalone-page>main>.exchange{grid-column:2;grid-row:1 / span 2;align-self:stretch;height:100%;position:sticky;top:96px}
+body.standalone-page .new-thumb{width:82px;height:82px;padding:0;object-fit:cover;background:#fff}
+body.standalone-page .old-product img{width:66px;height:66px;object-fit:cover;background:#fff;border-radius:0}
+body.standalone-page .new-product p{font-size:15px}
+body.standalone-page .new-price b{font-size:30px}
+body.standalone-page .payment-stages{margin-left:30px}
+body.standalone-page .payment-stages .stage-detail{padding-left:20px;padding-right:20px}
+body.standalone-page>footer{position:fixed;z-index:25;left:0;right:0;bottom:0;height:68px;padding:0 max(32px,calc((100vw - 1200px)/2));border-top:1px solid #ddd;background:rgba(255,255,255,.96);box-shadow:0 -3px 14px rgba(0,0,0,.06);backdrop-filter:blur(8px)}
+body.standalone-page>footer button{width:150px;height:40px}
+body.standalone-page>main>.exchange{padding-bottom:14px}
+body.standalone-page>main>.exchange-actions{position:static;z-index:1;grid-column:2;grid-row:3;left:auto;right:auto;bottom:auto;height:48px;padding:0;border:0;background:transparent;box-shadow:none;backdrop-filter:none}
+body.standalone-page .exchange-actions button{width:150px;height:40px}
+body.standalone-page #sheet{z-index:60}
+body.standalone-page.sheet-view>header,body.standalone-page.sheet-view>main,body.standalone-page.sheet-view>footer{visibility:visible;pointer-events:auto}
+body.standalone-page.sheet-view:before{content:"";position:fixed;inset:0;z-index:49;background:rgba(0,0,0,.45)}
+body.standalone-page #sheet{inset:50% auto auto 50%;width:560px;height:auto;min-height:0;max-width:calc(100vw - 64px);max-height:calc(100vh - 64px);margin:0;transform:translate(-50%,-50%);border:0;box-shadow:0 18px 60px rgba(0,0,0,.25);overflow:auto}
+body.standalone-page #sheet .sheet-head{height:54px;padding:0 22px}
+body.standalone-page #sheet #sheet-content{padding:22px}
+body.standalone-page #sheet:not(.time-picker-sheet) #sheet-content{padding:22px 22px 76px}
+body.standalone-page #sheet:not(.time-picker-sheet) #close-sheet,body.standalone-page #sheet:not(.time-picker-sheet) #save-sheet{position:absolute}
+body.standalone-page #sheet.addr-sheet:not(.time-picker-sheet) #close-sheet{position:static;right:auto;bottom:auto;width:auto;height:auto;border-radius:0;background:transparent;color:#999;font-size:22px;border:0;padding:0;line-height:1}
+body.standalone-page #sheet.time-picker-sheet{height:410px;overflow:hidden}
+body.standalone-page #sheet.time-picker-sheet #sheet-content{padding:0}
+body.standalone-page .time-picker-actions{position:absolute}
+/* Compact card-style desktop time picker. */
+body.standalone-page #sheet.time-picker-sheet{width:600px;height:min(360px,calc(100vh - 32px));height:min(360px,calc(100dvh - 32px));max-width:calc(100vw - 32px);max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);min-height:0;border:1px solid #e5e5e5;border-radius:8px;transform:translate(-50%,-50%);box-shadow:0 18px 55px rgba(0,0,0,.25);overflow:hidden}
+body.standalone-page #sheet.time-picker-sheet #sheet-content{display:flex;height:100%;min-height:0;flex-direction:column;overflow:hidden}
+body.standalone-page .time-picker-sheet .time-picker-head{display:flex;flex:0 0 56px;height:56px;padding:0 18px;border-bottom:0;background:#fff}
+body.standalone-page .time-picker-sheet .time-picker-head b{font-size:18px;line-height:1;font-weight:600;color:#222}
+body.standalone-page .time-picker-sheet .time-picker-close{width:26px;height:26px;margin-left:auto;color:#666;font-size:25px;line-height:24px;font-weight:300;text-align:center}
+body.standalone-page .time-picker-sheet .time-picker-close:hover{color:var(--lenovo-red)}
+body.standalone-page .time-picker-sheet .desktop-picker-body{flex:1 1 auto;min-height:0;padding:16px 18px 20px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+body.standalone-page .time-picker-sheet .time-picker-dates{display:grid;grid-template-columns:28px minmax(0,1fr) 28px;gap:10px;align-items:center;border:0;overflow:visible}
+body.standalone-page .time-picker-sheet .time-picker-date-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(68px,1fr));gap:10px;min-width:0}
+body.standalone-page .time-picker-sheet .time-picker-dates .picker-option{height:64px;padding:5px 2px;border:1px solid #d9d9d9;border-radius:4px;background:#fff;color:#222;font-size:13px;line-height:19px;text-align:center;white-space:nowrap}
+body.standalone-page .time-picker-sheet .time-picker-dates .picker-option span,body.standalone-page .time-picker-sheet .time-picker-dates .picker-option small{display:block}
+body.standalone-page .time-picker-sheet .time-picker-dates .picker-option span{font-size:14px;font-weight:500}
+body.standalone-page .time-picker-sheet .time-picker-dates .picker-option small{font-size:12px;font-weight:400;color:#808080}
+body.standalone-page .time-picker-sheet .time-picker-dates .picker-option:hover,body.standalone-page .time-picker-sheet .time-picker-slots .picker-option:hover{border-color:var(--lenovo-red);color:var(--lenovo-red);background:rgba(var(--lenovo-red-rgb),.03)}
+body.standalone-page .time-picker-sheet .time-picker-dates .picker-option:hover small{color:var(--lenovo-red)}
+body.standalone-page .time-picker-sheet .time-picker-dates .picker-option.active{border-color:var(--lenovo-red);color:var(--lenovo-red);background:rgba(var(--lenovo-red-rgb),.03)}
+body.standalone-page .time-picker-sheet .time-picker-dates .picker-option.active small{color:var(--lenovo-red)}
+body.standalone-page .time-picker-sheet .time-picker-nav{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;padding:0;border:1px solid #d9d9d9;border-radius:50%;background:#fff;color:#555;line-height:1;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+body.standalone-page .time-picker-sheet .time-picker-nav svg{display:block;width:7px;height:12px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+body.standalone-page .time-picker-sheet .time-picker-nav:hover:not(:disabled){border-color:var(--lenovo-red);color:var(--lenovo-red)}
+body.standalone-page .time-picker-sheet .time-picker-nav:disabled{border-color:#e6e6e6;color:#c8c8c8;background:#fafafa;box-shadow:none;cursor:default}
+body.standalone-page .time-picker-sheet .time-section-label{margin:18px 0 8px;color:#333;font-size:13px;line-height:20px;font-weight:500}
+body.standalone-page .time-picker-sheet .time-picker-slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px 12px;max-height:none;margin:0;padding:0;border:0;background:#fff;overflow:visible}
+body.standalone-page .time-picker-sheet .time-picker-slots .picker-option{height:40px;padding:0;border:1px solid #d9d9d9;border-radius:4px;background:#fff;color:#222;font-size:13px;text-align:center}
+body.standalone-page .time-picker-sheet .time-picker-slots .picker-option.active{border-color:var(--lenovo-red);color:var(--lenovo-red);background:rgba(var(--lenovo-red-rgb),.03)}
+body.standalone-page .time-picker-sheet .picker-option.active:after{display:none}
+body.standalone-page .time-picker-actions{position:static;flex:0 0 64px;height:64px;padding:0 18px;display:flex;align-items:center;justify-content:flex-end;gap:10px;border-top:0;background:#fff}
+body.standalone-page .time-picker-actions button{width:96px;height:40px;border:1px solid var(--lenovo-red);border-radius:2px;background:#fff;color:var(--lenovo-red);font-size:14px}
+body.standalone-page .time-picker-actions #time-confirm{background:var(--lenovo-red);color:#fff}
+body.standalone-page .time-picker-actions #time-confirm:disabled{border-color:#d7d7d7;background:#d7d7d7;color:#fff}
+@media(max-width:1180px){
+  body.standalone-page{min-width:0}
+  body.standalone-page>main{grid-template-columns:1fr;width:calc(100% - 40px);max-width:760px}
+  body.standalone-page>main>.new-card,body.standalone-page>main>.new-card+section:not(.exchange),body.standalone-page>main>.exchange{grid-column:1;grid-row:auto;position:static}
+}
+/* The native time dialog floats above the editor without replacing its contents. */
+body.standalone-page.time-picker-view:before{display:none}
+body.standalone-page #sheet.time-picker-sheet::backdrop{background:rgba(0,0,0,.45)}
+@media(max-width:360px){
+  body.standalone-page .time-picker-sheet .time-picker-head{padding:0 12px}
+  body.standalone-page .time-picker-sheet .time-picker-head b{font-size:16px}
+  body.standalone-page .time-picker-sheet .desktop-picker-body{padding:12px}
+  body.standalone-page .time-picker-sheet .time-picker-dates{grid-template-columns:24px minmax(0,1fr) 24px;gap:6px}
+  body.standalone-page .time-picker-sheet .time-picker-nav{width:24px;height:24px}
+  body.standalone-page .time-picker-actions{padding:0 12px}
+}
+/* Recovery editor: equal card gutters and actions inside the method card. */
+body.standalone-page.flow-editor .trade-header-link{display:none}
+body.standalone-page.flow-editor>main{display:flex;flex-direction:column;align-items:stretch;width:calc(100% - 40px);max-width:none;margin:20px auto;padding:0;gap:20px}
+body.standalone-page.flow-editor>main>section{width:100%;margin:0;flex:0 0 auto}
+body.standalone-page.flow-editor>main>.exchange{position:static;height:auto;display:flex;flex-direction:column;padding-bottom:22px}
+body.standalone-page.flow-editor .exchange>.exchange-actions{position:static;inset:auto;display:flex;justify-content:flex-end;flex:0 0 auto;width:100%;height:auto;margin:20px 0 0;padding:0;border:0;background:transparent;box-shadow:none;backdrop-filter:none}
+</style><link rel="stylesheet" href="lenovo-theme.css?v=20261012-1"></head><body class="standalone-page">
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;pointer-events:none"><defs><filter id="lenovo-brand-red" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.1805556 0 1.1805556 0" result="brand-mask"/><feFlood flood-color="var(--lenovo-red)" result="brand-color"/><feComposite in="brand-color" in2="brand-mask" operator="in"/></filter></defs></svg>
+<header><div class="trade-header-inner"><a class="trade-brand" href="index.html" aria-label="返回联想商品详情"><img src="assets/skz7mq0zavm0hd8xfaq0nrofxcwje3959207.png" alt="Lenovo"><span class="trade-brand-divider" aria-hidden="true"></span><span class="trade-brand-title">以旧换新</span></a><span class="trade-header-spacer"></span><a class="trade-header-link" href="index.html">返回商品详情</a></div></header>
+<main>
+<section class="new-card"><div class="section-heading"><h2>新品</h2><span class="tag">国补推荐</span></div><div class="new-product"><img class="new-thumb" src="assets/trade-new-thinkbook-16.png" alt="联想 ThinkBook 16p 2026"><div><p>联想 ThinkBook 16p 2026 / Ultra 7 251HX / 32G / 1T / RTX5060</p><div class="new-price"><b><small>¥</small> 9,929</b><span>预计补贴后换新价</span></div></div></div>
+<div class="payment-stages"><section class="payment-stage"><div class="stage-title"><span class="stage-number">1</span><div><h2>下单支付</h2><p>先下单购买新机</p></div><div class="stage-total">本次支付预估 <b><small>¥</small>15,739</b></div></div><div class="stage-detail"><div><span>单品价</span><b><small>¥</small>15,999</b></div><div><span>优惠券</span><b><span class="coupon-minus">−</span><small>¥</small>260</b></div><div class="conditional"><span>同时可享受以下优惠（符合条件可再减）</span><p>国补 <b><small>¥</small>1,500</b>　教育优惠 <b><small>¥</small>300</b></p></div></div></section><section class="payment-stage"><div class="stage-title"><span class="stage-number muted">2</span><div><h2>回收返款</h2><p>旧机验收后返款</p></div><div class="stage-total">预计返款 <b><small>¥</small>4,010</b></div></div><div class="stage-detail refund"><div><span>旧品回收款</span><b><small>¥</small>3,750</b></div><div><span>换新补贴</span><b><small>¥</small>260</b></div><div class="refund-note">旧机回收款验收后发放；<br/>换新补贴新机签收15天后发放。</div></div></section></div></section>
+<section><div class="section-heading"><h2>旧品信息</h2><button class="text-action" data-sheet="device">修改旧机</button></div><div class="old-product"><img alt="旧笔记本" src="assets/trade-old-thinkbook-16p.png"/><div class="old-copy"><p id="device-name">ThinkBook 16p 2024款 i7 RTX4060</p><div class="old-price"><span>预计回收款</span><b><small>¥</small>3,750</b></div></div></div></section>
+<section class="exchange"><h2>换新方式</h2><p class="method-note">2次上门：送新品，另外单独收旧品</p><button class="account field" data-sheet="account"><span>收款信息</span><b id="account">158****5479</b><em aria-hidden="true"></em></button><div aria-label="回收方式" class="tabs" role="tablist"><button aria-selected="true" class="active" data-mode="home" role="tab">上门回收</button><button aria-selected="false" data-mode="mail" role="tab">邮寄回收</button></div><h3>回收方式</h3><div class="steps"><div><img alt="" id="step-one-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAIAAAADnC86AAACx0lEQVR4nM2YzW7aQBDHZ3dtQ5BAucQHJPwEabgiYW60LxD1EPWBIh4k4lDlJRpb4oJQuJXcNhKcqeTEeD9cgTGfrr3mQ/R/8Yc8+/Pszo5njMIwhEsIX4QKAJr6o1KGMlY41/wmQoAQwmshxdGQylRzLgQXQsrMJwnGRCOaRo4FSymDgEmZLw4wRoahY4wPBDPGGeNwqHRd03UtHzgMwyDgQgg4ToQQw9AQSlh4/A8qO54KAEKIIGCJvuH9Wwtfs+NImS2DgGeDGTvBDO+xxX6sbIGllMdEU4oY43J7N26Bg4ApDkQpzcsOtgdfgzkXivvVdZ1u92kymQwGg07n0XUdFSspQ85Fwnaa+YFKbgKATuexUCjMZjMAiE4eHn5YlpVpSDAuFI3ofLnBpQwVqdPpFABub7/YdgsAHOdXv9+/vr5WsRWLNB/l8+VU76x8it7eRqZptttfiwu1299M0xyNfiuayxiUG+x5Xrlc3rxTLpc9zzs7+ObGHI/Hvu9Hl77vj8fjarWaF4yi4Pr89NUrkefnn9Ppn3q9DgDD4WulUrm//65oixBcXRXX4I+PpQcq4pz1er3h8BUA7u7qjUZD03R181LpUPCRKi3Ay+2EEOQq+qLM9f5OazVLZQevtPpCrsBKNVCUthznBQAsy1olTttuNZu2ijmKyUswxljK7I9St/tEKd3BrF5FhY3jemgNBsgAu65DKd3Pjs2mXatZrqvExjE4PqQWZpEc58W2W4krallWs9mK/M4LRiSVHX2CUhyax9jGqieKbBTe65jifF4fpZhRStMDOPMBw9BXJfdWMPv+LG8JrS6MUbFYWF/uvNGZqLA3+BYYY5xSgh8jXdd24nc3oHRdIyS788klQsi+PwmRbBgaISdrXwnBhpEwiwkAhOYt10n8XrQwemILg/6vpu3CbeolG/ML/4qAM+hif33+Am/bm99utxv4AAAAAElFTkSuQmCC"/><span id="step-one">工程师上门</span></div><i></i><div><img alt="" id="step-two-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAIAAAADnC86AAAChUlEQVR4nM2Y/ZGzIBDGl0WNTcgVoinESSGZq+CdKyRjIdFCjjThgcKNkmj8xsQb3+cfJwb5ufAAuxKtNewh3IUKAI59U6W0ekhXqm4SAoQQbEUseyM2Q10UZVmUpVKLLSkidajj0HfBSikhpFLrfIBIPM9FxBfBUhZSFvCqXNdxXWcdWGstRFGWJbwnSqnnOYSMTDxOUOX7VAAoy1IIORobDm/VsS77yJqthCiWwVJuMMIDdjn0SgeslHrHTTOSslDd1dhxnRDSsiPOeZZdGfsAgDCMbB4RQvr+YcTVRVEZwYbHOQcAVukjTa8AEEVHmzfwPLfZW1rwTy6m9ibO+e3GOf/mnDPGwvDIGGv+zbIUAJo3mMFTxIPvdcBK6Tz/mXrg6+ufiS8IqstUsyxLDf58/pxq4/sHs5/f57g380P1opxoEwUBS5LLTBulFCJtXb0I3krqAdoAbLz2Ili/modkWZokF3u2foAa8Fzr3uwaGzduiqJ2+m+3hTfQemUGUm8XJzOwxrpmCQ3Xj1nTi0JzGTu4WoVh2xdjLI5PaXodpTbvNCVCuhETspCK8FpmSBlj5/Nn87OnIJhbdeRBvkc8n6bUuwfLsk40Q2qSXEzLma7wAbICA0Acn+qN+m6robIs5ZzHceWDLcFQs9P0Oso29l6kwhPoPseIhCLOJ7CMsSg6NvYxtmrOq+dFNSX6lHivOxZ7y3fqvFp3LAJAnv/Yp9D1pH5bIqEe1PFEwGykeS7gb+T73rOTOp5CxJkU/B25rtPzb9/MrutQulz5rBKldBjPyCryPIfSzcpXStHzRkZxBEBIVXJtEnddwrijJQz5v4q2ncvUPQvznT9FwB9ot68+v3NWsCYdcmX7AAAAAElFTkSuQmCC"/><span id="step-two">当面验机</span></div><i></i><div><img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAIAAAADnC86AAACU0lEQVR4nM2YXW6jMBDH7bFh+5KnPNdRLpALQA5S7UGqPVAVbR+2hwi8ba+wVeklGn+MV0AgEBxiAhX9v0QZjH+yZzyegVpryRyCWaiEEO4/FNFiJZsrN1JKKKVwEvWcjfpstdbGaGMQr45kAIwzztlYMCJKqRCHxQEADcMAAG4EG4OHgyS3Kgh4EPBhYGutlNoYQ8aJMRaGnFKH4x27Ya3NnTqaWuyZkVI51wZdk5RaKT2eWrFRSn0dbAxOstb2nKa7khYYcVQ09Ugpje3T2Io6KZXztSzL0nSfZZkPI463URR37VKqu7sfDrDWxnle0zRJkn0cb4VY+YCTZH9/L4QQZ3bEPGbr3HICG+12bUl1LqLWbvfU3I+Pj6wLJgXiHIxofTKiU2maEEIeHn7WFieVEGKKNF/m8xp8I7WIgHchVpdgZ0JEADYNOIq2u91T0+L0cQM0EVgIEcfbJNk3jY+Pv5yDsQIdwSPrkCiK6+grT8GlkbYCHRPIyPrn7e2f1l5Z1trpSp/X17/Pz79fXv4MegvKH9fF5asgCAkhy+XSZzCtQEcfU+pVAzm12WzW6/VisfAD09aK+8uUq/KkkgZoGrC/wB/smZKGgnn1nzIAZ7oWYpVl72U+8pm6vFScj1ij8D7dTowzIx3gMjP05IQz9VxlrFFvt4L58/MwtIT2FwBtFgIt14Zh8EVU0pm8BQaAnhJ8jDjP/XsRXJb/jF3vfIaX9cGZ0XGKwpAzNtmxLvoo/o1aGNqTopUa1VJw7tjh792mztmYz/wpgnyBZvvq8x9Cg1fDlT9xfwAAAABJRU5ErkJggg=="/><span>确认回收</span></div></div>
+<label class="field"><span class="field-label"><span class="required">*</span>姓名</span><input aria-label="联系人姓名" autocomplete="off" id="contact" placeholder="请输入联系人姓名"/></label><label class="field"><span class="field-label">电话</span><input aria-label="联系电话" id="phone" inputmode="tel" value="15810525479"/></label><button class="field address" data-sheet="address"><span class="field-label">地址</span><span id="address">北京市 北京市 海淀区 马连洼街道 软件园西三路在联想总部(北京)园区 附近</span><em aria-hidden="true"></em></button><p class="warning" id="coverage">当前位置不支持上门，请选择邮寄回收或修改地址</p><button class="field time" data-sheet="time"><span class="field-label"><span class="required">*</span>时间</span><span id="time">请选择上门时间</span><em aria-hidden="true"></em></button><label class="agreement"><input id="agreement" type="checkbox"/><span>我已经阅读并同意 <button class="text-action" data-sheet="agreement" type="button">联想以旧换新协议</button></span></label></section>
+</main><footer><button id="cart">加入购物车</button><button id="exchange">立即换新</button></footer><div hidden="" id="toast" role="status"></div><dialog id="sheet" tabindex="-1"><div class="sheet-head"><h2 id="sheet-title"></h2><button aria-label="返回以旧换新" id="close-sheet">返回</button></div><div id="sheet-content"></div></dialog><script>const tradeIcons={"engineer": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAIAAAADnC86AAACx0lEQVR4nM2YzW7aQBDHZ3dtQ5BAucQHJPwEabgiYW60LxD1EPWBIh4k4lDlJRpb4oJQuJXcNhKcqeTEeD9cgTGfrr3mQ/R/8Yc8+/Pszo5njMIwhEsIX4QKAJr6o1KGMlY41/wmQoAQwmshxdGQylRzLgQXQsrMJwnGRCOaRo4FSymDgEmZLw4wRoahY4wPBDPGGeNwqHRd03UtHzgMwyDgQgg4ToQQw9AQSlh4/A8qO54KAEKIIGCJvuH9Wwtfs+NImS2DgGeDGTvBDO+xxX6sbIGllMdEU4oY43J7N26Bg4ApDkQpzcsOtgdfgzkXivvVdZ1u92kymQwGg07n0XUdFSspQ85Fwnaa+YFKbgKATuexUCjMZjMAiE4eHn5YlpVpSDAuFI3ofLnBpQwVqdPpFABub7/YdgsAHOdXv9+/vr5WsRWLNB/l8+VU76x8it7eRqZptttfiwu1299M0xyNfiuayxiUG+x5Xrlc3rxTLpc9zzs7+ObGHI/Hvu9Hl77vj8fjarWaF4yi4Pr89NUrkefnn9Ppn3q9DgDD4WulUrm//65oixBcXRXX4I+PpQcq4pz1er3h8BUA7u7qjUZD03R181LpUPCRKi3Ay+2EEOQq+qLM9f5OazVLZQevtPpCrsBKNVCUthznBQAsy1olTttuNZu2ijmKyUswxljK7I9St/tEKd3BrF5FhY3jemgNBsgAu65DKd3Pjs2mXatZrqvExjE4PqQWZpEc58W2W4krallWs9mK/M4LRiSVHX2CUhyax9jGqieKbBTe65jifF4fpZhRStMDOPMBw9BXJfdWMPv+LG8JrS6MUbFYWF/uvNGZqLA3+BYYY5xSgh8jXdd24nc3oHRdIyS788klQsi+PwmRbBgaISdrXwnBhpEwiwkAhOYt10n8XrQwemILg/6vpu3CbeolG/ML/4qAM+hif33+Am/bm99utxv4AAAAAElFTkSuQmCC", "courier": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAIAAAADnC86AAADDklEQVR4nM2YQU/bMBTHn+3E7ZAQg11gSFAkUNGO7FRg5Qy7wE6gfRC074H6DSYmpPEh1ha4TIzTuEyoQUggVUOCFlrbsac0bZq0bpq2VN3/UstO3q/Pee/lOUgpBaMQHgkVAIzol0qpZEPKkTOJECCEcFMoojUUZauFsG1h21J2vZJgTAxiGGRQsJSSMS5lb3GAMaLUxBj3CeZccC6gX5mmYZpGb2ClFGPCtm0YTIQQSg2ENA8ed6DywakAYNs2Y1zrG26fqvnaPY4isyVjojuY8xfY4Ta23R4rAbCUcpBoChHnQgazMQBmjA+DqjWOvZEQdni+5vM5ALAsyx3k8zl3EFFSKiFsDdj2zbbLsqxcLmtZ1vW1M6jNFCyrEB0MQUQ9waVUnSri3d2dEKJYLAJAsVh8eHgAgJubm2qVuYPZ2dmoYOmUebee1wuIEE7Caa/OZA4eHx9DzKXTG6nUakQ2paZbyT2PwxJ3c3MrmVzWLh0efo2I9IEigwEgFotp5xljhULBu31tbT3cjmxcWQf33YeUy+Xau9kxZ1lWV7ZqgDww9K2Jide7u3su2N35ELZSQ2h95ubm9vY+53LZKPmN3R/di6tP9vr6BzfRtUKoFRyJXKlUOi05zzlCb4QaoHoeM8b99cyvTObg6enJDUillNvaeavuZPtd+/tftNYMg1BqNoOrZksP3tr6yLm4uPhVLpeWl9+dn/+cn08sLi75vT0+/r6y8p5SenZ2urPzKR5/1clj3PjTfrBeicQCAFxd/SGEJJPJy8vfU1NvlpaaYHeHp6dnxsYc3szM2/Hx8a5g5G1UtcJCGtjb29ujo2/Pz8+JxML29k5LPTk5yWezPwAglVpNpzc6GSEYx+K0FRxSrj3d3/+dnJzSLpVKJaVUiK/gK9StXWalUu21hY4ujFE83tynwKN1421IokHjATDGOKQFH0SmabTEb2swm6ZBSPeTT08ihLT7o8kiSg1CXqyGE4Ip1eyiBoCQc+R6Eb9rRxhTW4/R/3VoG/ExdZQH8xF/ioAhaGRfff4BdKXLKQU2KbEAAAAASUVORK5CYII=", "check": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAIAAAADnC86AAAChUlEQVR4nM2Y/ZGzIBDGl0WNTcgVoinESSGZq+CdKyRjIdFCjjThgcKNkmj8xsQb3+cfJwb5ufAAuxKtNewh3IUKAI59U6W0ekhXqm4SAoQQbEUseyM2Q10UZVmUpVKLLSkidajj0HfBSikhpFLrfIBIPM9FxBfBUhZSFvCqXNdxXWcdWGstRFGWJbwnSqnnOYSMTDxOUOX7VAAoy1IIORobDm/VsS77yJqthCiWwVJuMMIDdjn0SgeslHrHTTOSslDd1dhxnRDSsiPOeZZdGfsAgDCMbB4RQvr+YcTVRVEZwYbHOQcAVukjTa8AEEVHmzfwPLfZW1rwTy6m9ibO+e3GOf/mnDPGwvDIGGv+zbIUAJo3mMFTxIPvdcBK6Tz/mXrg6+ufiS8IqstUsyxLDf58/pxq4/sHs5/f57g380P1opxoEwUBS5LLTBulFCJtXb0I3krqAdoAbLz2Ili/modkWZokF3u2foAa8Fzr3uwaGzduiqJ2+m+3hTfQemUGUm8XJzOwxrpmCQ3Xj1nTi0JzGTu4WoVh2xdjLI5PaXodpTbvNCVCuhETspCK8FpmSBlj5/Nn87OnIJhbdeRBvkc8n6bUuwfLsk40Q2qSXEzLma7wAbICA0Acn+qN+m6robIs5ZzHceWDLcFQs9P0Oso29l6kwhPoPseIhCLOJ7CMsSg6NvYxtmrOq+dFNSX6lHivOxZ7y3fqvFp3LAJAnv/Yp9D1pH5bIqEe1PFEwGykeS7gb+T73rOTOp5CxJkU/B25rtPzb9/MrutQulz5rBKldBjPyCryPIfSzcpXStHzRkZxBEBIVXJtEnddwrijJQz5v4q2ncvUPQvznT9FwB9ot68+v3NWsCYdcmX7AAAAAElFTkSuQmCC", "inspect": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAIAAAADnC86AAADU0lEQVR4nM2Yz08aQRTH58fuSoKx7AHEg2K1NvGCF+gFDFrsH2AvxvQPMf1/WuF/kB+RaqLEWg9SL3LoJkhiWBKJyeLuzkwDy29Wdiga+j2Q3WEyn32z7715byFjDExDaCpUAIDAP5VSRttiDTUGIQQQQtQV5FwN8my1aRJiEkKp40yMEBawIOBJwZRSXTcoHc8PEIKSJCKE/hFsGKZhmOBfJYqCKArjgRljum4SQsBkwhhLkgChzYtHz1CNyakAAEKIrhu2tqHhoaatzn7Ezaa6bjqDDeMFdniITYZ9pQ9MKZ3Em0bIMEzaH419YF03XoNqu7jQuTJNwhOvhJBi8VZVVUqpLMuBwLLb7eYBU8pMk3RySzecnuq6Y266uvqVTqcAAF6vDyFYrVY1TYtGNyORKA8bIzTjkvosppQ5UjOZ9OXlz1hsKxQKd0KzULjO5Y7v7+93dz87gkkzzVv5vGWxaTYCbrStqdTR3t7+4uLiwF+12kMymVhbe7+9/dGRLUmitdst5xpwucEnJSSdTsViW8NUAMDc3Jt4fCefP69Wq45g2gZxgYvFWwBAKBQeGFcUxbpYXX3n8/msaeOB2cgzSlVVr9fXea+npyfWbyLx3boGAPh886pacQSzNqjlXKMPZUpp7wl/cvJDUf4oitLrzwghnmhkbJzSR5bl3ve3v/9lgNrclYrHI/Os1ge2O7i6CgSWNU0rFK6t26WlpYODr73UcvmuVCqtr6+PWqUf1AGPIrvd7mh0M5c7rtUebCdks5lgcEOWnS2GbVALPLpMAQBEIlG/fyGZTAy4brl8d3j4TdPqPFTQA+JNIJay2Uw+f+5raB4hpKqVUqkUDG54PJ5c7jge/xQKhTgTCLTAlLJ6/YnnkR8fH29ufqtqhVLm8cgrK2/9/gUAwMXFRTp9FI/vDId7r1yuGStAWuGEEMQI8RSws7Oz4fCH4fGmrcw6Qp5j457Cu3ssYgETfaKKx+KdnZ09CxawfZVZrz+NW0LzCyHocs10b3v/kyTxlahgaPE+MEJoRAk+iURRGIjYwfAVRQFj585nLGGMh+2xyRuSJGD8Yu0rxkiSbHbRBgBho+V6EbubLYxom4/h/9W0TblNnWZjPuVPEeAVNLWvPn8BgX/VBE4d5JQAAAAASUVORK5CYII="};
+const $ = (selector) => document.querySelector(selector);
+const pageActions=document.querySelector('body>footer');
+if(pageActions){pageActions.classList.add('exchange-actions');document.querySelector('main')?.appendChild(pageActions)}
+let mode = 'home';
+let toastTimer;
+
+function toast(message) {
+  $('#toast').textContent = message;
+  $('#toast').hidden = false;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { $('#toast').hidden = true; }, 2800);
+}
+
+document.querySelectorAll('.back').forEach((button) => {
+  button.onclick = () => {
+    if (window.parent !== window) parent.postMessage('close-trade-modal','*');
+    else if (history.length > 1) history.back();
+    else window.location.href = 'index.html';
+  };
+});
+
+const priceDetailToggle = $('.price-detail-toggle');
+const priceDetailBubble = $('.price-detail-bubble');
+const priceBreakdownScroll = $('.price-breakdown-scroll');
+
+if (priceBreakdownScroll) {
+  let dragStartX = 0;
+  let dragStartLeft = 0;
+  let dragging = false;
+
+  priceBreakdownScroll.addEventListener('pointerdown', (event) => {
+    if (event.pointerType === 'touch') return;
+    dragging = true;
+    dragStartX = event.clientX;
+    dragStartLeft = priceBreakdownScroll.scrollLeft;
+    priceBreakdownScroll.classList.add('is-dragging');
+    priceBreakdownScroll.setPointerCapture(event.pointerId);
+  });
+
+  priceBreakdownScroll.addEventListener('pointermove', (event) => {
+    if (!dragging) return;
+    priceBreakdownScroll.scrollLeft = dragStartLeft - (event.clientX - dragStartX);
+  });
+
+  const stopPriceDrag = (event) => {
+    if (!dragging) return;
+    dragging = false;
+    priceBreakdownScroll.classList.remove('is-dragging');
+    if (priceBreakdownScroll.hasPointerCapture(event.pointerId)) priceBreakdownScroll.releasePointerCapture(event.pointerId);
+  };
+
+  priceBreakdownScroll.addEventListener('pointerup', stopPriceDrag);
+  priceBreakdownScroll.addEventListener('pointercancel', stopPriceDrag);
+}
+
+function closePriceDetail() {
+  if (!priceDetailToggle || !priceDetailBubble) return;
+  priceDetailToggle.setAttribute('aria-expanded', 'false');
+  priceDetailBubble.hidden = true;
+}
+
+priceDetailToggle?.addEventListener('click', (event) => {
+  event.stopPropagation();
+  const willOpen = priceDetailToggle.getAttribute('aria-expanded') !== 'true';
+  priceDetailToggle.setAttribute('aria-expanded', String(willOpen));
+  priceDetailBubble.hidden = !willOpen;
+});
+
+document.addEventListener('click', (event) => {
+  if (!event.target.closest('.price-summary-info')) closePriceDetail();
+});
+
+document.querySelectorAll('[data-mode]').forEach((button) => {
+  button.onclick = () => {
+    mode = button.dataset.mode;
+    document.querySelectorAll('[data-mode]').forEach((tab) => {
+      tab.classList.toggle('active', tab === button);
+      tab.setAttribute('aria-selected', String(tab === button));
+    });
+    $('#step-one').textContent = mode === 'home' ? '工程师上门' : '物流取件';
+    $('#step-two').textContent = mode === 'home' ? '当面验机' : '专业验机';
+    $('#step-one-icon').src = tradeIcons[mode === 'home' ? 'engineer' : 'courier'];
+    $('#step-two-icon').src = tradeIcons[mode === 'home' ? 'check' : 'inspect'];
+    $('#coverage').hidden = mode === 'mail';
+    $('#time').textContent = mode === 'home' ? '请选择上门时间' : '请选择取件时间';
+    $('.time').classList.remove('chosen');
+  };
+});
+
+const dialog = $('#sheet');
+let timeScrollState=null;
+function closeSheet() {
+  const wasTimePicker=dialog.classList.contains('time-picker-sheet');
+  dialog.close();document.body.classList.remove('sheet-view');
+  dialog.classList.remove('time-picker-sheet');
+  dialog.classList.remove('addr-sheet');$('#close-sheet').textContent='返回';
+  document.body.classList.remove('time-picker-view');
+  if(timeScrollState){
+    document.documentElement.style.overflowY=timeScrollState.root;
+    timeScrollState=null;
+  }
+  if(wasTimePicker){parent.postMessage('trade-time-close','*');$('.time').focus({preventScroll:true})}
+}
+
+$('#close-sheet').onclick = closeSheet;
+dialog.onclick = (event) => {
+  if (event.target === dialog && event.clientY < dialog.getBoundingClientRect().top) closeSheet();
+};
+
+function show(title, html, modal=false) {
+  dialog.classList.remove('time-picker-sheet');
+  $('#sheet-title').textContent = title;
+  $('#sheet-content').innerHTML = html;
+  if(modal)dialog.showModal();else dialog.setAttribute('open','');
+  document.body.classList.add('sheet-view');$('#sheet').focus({preventScroll:true});
+}
+
+document.querySelectorAll('[data-sheet]').forEach((button) => {
+  button.onclick = () => {
+    const kind = button.dataset.sheet;
+    if (kind === 'time') {
+      const dates=Array.from({length:7},(_,i)=>{const d=new Date();d.setDate(d.getDate()+i);return `${d.getMonth()+1}月${d.getDate()}日 ${i===0?'今天':'周'+'日一二三四五六'[d.getDay()]}`});
+      const slots = ['08:00-09:00', '09:00-10:00', '10:00-11:00', '11:00-12:00', '13:00-14:00', '14:00-15:00'];
+      const title = mode === 'home' ? '请选择上门时间' : '请选择取件时间';
+      const savedTime=$('#time').textContent;
+      let selectedDate=dates.find(date=>savedTime.includes(date))||dates[0];
+      let selectedSlot=slots.find(slot=>savedTime.includes(slot))||slots[0];
+      const visibleDateCount=5;
+      const lastDateStart=Math.max(0,dates.length-visibleDateCount);
+      let dateStart=dates.indexOf(selectedDate)>=visibleDateCount?lastDateStart:0;
+      const dateMarkup=list=>list.map(date=>{const [day,weekday]=date.split(' ');return `<button type="button" class="picker-option${date===selectedDate?' active':''}" data-date="${date}"><span>${day}</span><small>${weekday}</small></button>`}).join('');
+      show(title, `<div class="time-picker-head"><b>${title}</b><button class="time-picker-close" id="time-close" type="button" aria-label="关闭">×</button></div><div class="desktop-picker-body"><div class="time-picker-dates"><button class="time-picker-nav time-picker-prev" id="time-prev" type="button" aria-label="查看上一组日期" title="查看上一组日期"><svg viewBox="0 0 7 12" aria-hidden="true"><path d="m6 1-5 5 5 5"/></svg></button><div class="time-picker-date-list" id="time-date-list">${dateMarkup(dates.slice(dateStart,dateStart+visibleDateCount))}</div><button class="time-picker-nav time-picker-next" id="time-next" type="button" aria-label="查看下一组日期" title="查看下一组日期"><svg viewBox="0 0 7 12" aria-hidden="true"><path d="m1 1 5 5-5 5"/></svg></button></div><div class="time-section-label">选择时间段</div><div class="time-picker-slots">${slots.map(slot=>`<button type="button" class="picker-option${slot===selectedSlot?' active':''}" data-slot="${slot}">${slot}</button>`).join('')}</div></div><div class="time-picker-actions"><button type="button" id="time-cancel">取消</button><button type="button" id="time-confirm" disabled>确定</button></div>`, true);
+      dialog.classList.add('time-picker-sheet');
+      document.body.classList.add('time-picker-view');
+      timeScrollState={root:document.documentElement.style.overflowY};
+      document.documentElement.style.overflowY='hidden';
+      dialog.scrollTop=0;$('#sheet-content').scrollTop=0;$('.desktop-picker-body').scrollTop=0;
+      parent.postMessage('trade-time-open','*');
+      const timeConfirm=$('#time-confirm');
+      const syncTimeConfirm=()=>{timeConfirm.disabled=!(selectedDate&&selectedSlot)};
+      const bindDateOptions=()=>document.querySelectorAll('[data-date]').forEach(option=>option.onclick=()=>{selectedDate=option.dataset.date;document.querySelectorAll('[data-date]').forEach(item=>item.classList.toggle('active',item===option));syncTimeConfirm()});
+      const renderDatePage=()=>{const list=$('#time-date-list');list.innerHTML=dateMarkup(dates.slice(dateStart,dateStart+visibleDateCount));$('#time-prev').disabled=dateStart===0;$('#time-next').disabled=dateStart===lastDateStart;bindDateOptions()};
+      bindDateOptions();
+      document.querySelectorAll('[data-slot]').forEach(option=>option.onclick=()=>{selectedSlot=option.dataset.slot;document.querySelectorAll('[data-slot]').forEach(item=>item.classList.toggle('active',item===option));syncTimeConfirm()});
+      syncTimeConfirm();
+      $('#time-close').onclick=closeSheet;
+      $('#time-prev').onclick=()=>{dateStart=0;renderDatePage()};
+      $('#time-next').onclick=()=>{dateStart=lastDateStart;renderDatePage()};
+      $('#time-prev').disabled=dateStart===0;
+      $('#time-next').disabled=dateStart===lastDateStart;
+      $('#time-cancel').onclick=closeSheet;
+      timeConfirm.onclick=()=>{
+        $('#time').textContent=`${selectedDate} ${selectedSlot}`;
+        $('.time').classList.add('chosen');
+        closeSheet();
+      };
+      return;
+    }
+
+    if (kind === 'agreement') {
+      show('联想以旧换新协议', '<p class="sheet-help">此页面为交互原型，尚未接入正式协议正文。实际回收价格以质检结果为准；正式下单前需查看并同意联想提供的完整协议。</p><button class="confirm" id="save-sheet">返回</button>');
+      $('#save-sheet').onclick = closeSheet;
+      return;
+    }
+
+    if (kind === 'address') {
+      const regionData = {
+        '北京市': {'北京市': {'海淀区': ['马连洼街道', '中关村街道', '西北旺镇'], '朝阳区': ['望京街道', '三里屯街道', '酒仙桥街道']}},
+        '上海市': {'上海市': {'浦东新区': ['张江镇', '陆家嘴街道'], '徐汇区': ['徐家汇街道', '田林街道']}},
+        '广东省': {'广州市': {'天河区': ['天河南街道', '石牌街道'], '越秀区': ['北京街道', '东风街道']}, '深圳市': {'南山区': ['粤海街道', '科技园街道'], '福田区': ['福田街道', '华强北街道']}}
+      };
+      const levelNames = ['省份', '城市', '区县', '街道'];
+      const parts = ($('#address').textContent || '').trim().split(/\s+/);
+      let vals = ['北京市', '北京市', '海淀区', '马连洼街道'];
+      let detail = '软件园西三路在联想总部(北京)园区 附近';
+      if (parts.length >= 4 && regionData[parts[0]] && regionData[parts[0]][parts[1]] && regionData[parts[0]][parts[1]][parts[2]] && regionData[parts[0]][parts[1]][parts[2]].includes(parts[3])) {
+        vals = parts.slice(0, 4);
+        detail = parts.slice(4).join(' ') || detail;
+      }
+      let active = 3;
+      show('修改回收地址', '<div class="addr-card"><div class="addr-card-head"><span class="lbl">回收区域</span><span class="hint" id="addr-hint"></span></div><div class="addr-tabs" id="addr-tabs"></div><div class="addr-opts" id="addr-opts"></div></div><div class="addr-card"><div class="addr-card-head"><span class="lbl">详细地址</span></div><input class="addr-detail-input" id="addr-detail" placeholder="请输入详细地址"></div><button class="addr-confirm" id="save-sheet" type="button">确认</button>');
+      dialog.classList.add('addr-sheet');
+      $('#close-sheet').textContent = '×';
+      const optsAt = lvl => {
+        if (lvl === 0) return Object.keys(regionData);
+        if (lvl === 1) return Object.keys(regionData[vals[0]] || {});
+        if (lvl === 2) return Object.keys((regionData[vals[0]] || {})[vals[1]] || {});
+        return ((regionData[vals[0]] || {})[vals[1]] || {})[vals[2]] || [];
+      };
+      const paint = () => {
+        $('#addr-hint').textContent = '选择' + levelNames[active];
+        $('#addr-tabs').innerHTML = vals.map((v, i) => '<button type="button" data-lvl="' + i + '"' + (i === active ? ' class="active"' : '') + '>' + (v || '请选择') + '</button>').join('');
+        $('#addr-opts').innerHTML = optsAt(active).map(o => '<button type="button" data-opt="' + o + '"' + (vals[active] === o ? ' class="selected"' : '') + '><span>' + o + '</span>' + (vals[active] === o ? '<span class="tick">✓</span>' : '') + '</button>').join('');
+        $('#addr-tabs').querySelectorAll('button').forEach(b => { b.onclick = () => { active = Number(b.dataset.lvl); paint(); }; });
+        $('#addr-opts').querySelectorAll('button').forEach(b => { b.onclick = () => {
+          vals[active] = b.dataset.opt;
+          vals = vals.slice(0, active + 1).concat(vals.slice(active + 1).map(() => null));
+          if (active < 3) active += 1;
+          paint();
+        }; });
+      };
+      paint();
+      $('#addr-detail').value = detail;
+      $('#save-sheet').onclick = () => {
+        if (vals.some(v => !v)) { toast('请选择完整回收区域'); return; }
+        const nextDetail = $('#addr-detail').value.trim();
+        if (!nextDetail) { toast('请输入详细地址'); return; }
+        $('#address').textContent = vals.join(' ') + ' ' + nextDetail;
+        closeSheet();
+      };
+      return;
+    }
+
+
+    if (kind === 'account') {
+      toast('跳转服务侧页面');
+      return;
+    }
+
+    const settings = {
+      address: ['修改回收地址', '请输入完整回收地址', $('#address').textContent],
+      device: ['修改旧机', '请输入旧机型号', $('#device-name').textContent],
+    };
+    const [title, placeholder, value] = settings[kind];
+    show(title, '<input class="sheet-input" id="sheet-value"><button class="confirm" id="save-sheet">确认</button>');
+    $('#sheet-value').placeholder = placeholder;
+    $('#sheet-value').value = value;
+    $('#save-sheet').onclick = () => {
+      const nextValue = $('#sheet-value').value.trim();
+      if (!nextValue) { toast(placeholder); return; }
+      if (kind === 'address') {
+        $('#address').textContent = nextValue;
+      } else {
+        $('#device-name').textContent = nextValue;
+        toast('已修改旧机名称，估价为演示数据');
+      }
+      closeSheet();
+    };
+  };
+});
+
+function submit(addToCart) {
+  if (!$('#contact').value.trim()) { toast('请输入联系人姓名'); $('#contact').focus(); return; }
+  if (!/^1\d{10}$/.test($('#phone').value)) { toast('请输入正确的联系电话'); return; }
+  if (mode === 'home') { toast('当前位置不支持上门，请选择邮寄回收'); return; }
+  if (!$('.time').classList.contains('chosen')) { toast('请选择取件时间'); return; }
+  if (!$('#agreement').checked) { toast('请先阅读并同意以旧换新协议'); return; }
+  toast(addToCart ? '已加入原型购物车（未提交真实订单）' : '换新信息已确认（原型演示，未提交真实订单）');
+}
+
+$('#cart').onclick = () => submit(true);
+$('#exchange').onclick = () => submit(false);
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&dialog.open){e.preventDefault();closeSheet();return}if(e.key==='Escape'&&!dialog.open){e.preventDefault();parent.postMessage('close-trade-modal','*')}});</script><script>(function(root){
+'use strict';
+const templates=[{name:'iPhone 14 Pro',base:3750},{name:'华为 Mate 60 Pro',base:2600},{name:'小米 13',base:1900}];
+const deductions=[[0,150,500],[0,120,400],[0,100,300],[0,250]];
+function qty(n){return Math.min(2,Math.max(1,Math.floor(Number(n)||1)))}
+function old(i=0){return {...templates[i%3],id:'old-'+Date.now()+'-'+Math.random().toString(36).slice(2),condition:[0,0,0,0],estimate:templates[i%3].base,subsidy:260,mode:'mail',account:'158****5479',contact:'',phone:'15810525479',address:'北京市 海淀区 马连洼街道 软件园西三路 联想总部（北京）园区附近',time:'',agreed:false}}
+function estimate(base,answers){return Math.max(0,Number(base)-deductions.reduce((s,options,i)=>s+(options[answers[i]]||0),0))}
+function totals(groups,keys=Object.keys(groups)){return keys.reduce((s,k)=>{(groups[k]||[]).forEach(o=>{s.count++;s.estimate+=Number(o.estimate)||0;s.subsidy+=Number(o.subsidy)||0});return s},{count:0,estimate:0,subsidy:0})}
+function parse(raw,fallback){try{return JSON.parse(raw)||fallback}catch{return fallback}}
+function escape(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+root.TradeState={qty,old,estimate,totals,parse,escape,clone:x=>JSON.parse(JSON.stringify(x))};
+})(typeof window!=='undefined'?window:globalThis);
+</script><script>(()=>{
+const S=TradeState;let ctx=null,old={...S.old(),name:document.querySelector('#device-name').textContent};
+const editorParams=new URLSearchParams(location.search);
+const pageContext=window.parent===window&&editorParams.get('view')==='editor'?S.parse(editorParams.get('context'),null):null;
+const returnPage=new URL(editorParams.get('returnTo')||'settlement-center.html',location.href);
+const money=n=>'<small>¥</small>'+Math.max(0,Number(n)||0).toLocaleString('en-US');
+function paint(){
+$('#device-name').textContent=old.name;$('.old-price b').innerHTML=money(old.estimate);
+const price=Number(ctx?.product?.price)||15999,coupon=Number(ctx?.coupon??260),edu=Number(ctx?.edu??300),sub=Number(ctx?.guobu??1500);
+if(ctx?.product?.name)$('.new-product p').textContent=ctx.product.name;
+if(ctx?.product?.image){$('.new-thumb').src=ctx.product.image;$('.new-thumb').alt=ctx.product.name}
+$('.new-price b').innerHTML=money(price-coupon-edu-sub-old.estimate-old.subsidy);
+const stages=document.querySelectorAll('.payment-stage');
+stages[0].querySelector('.stage-total b').innerHTML=money(price-coupon);
+stages[0].querySelector('.stage-detail>div:first-child b').innerHTML=money(price);
+stages[0].querySelector('.stage-detail>div:nth-child(2) b').innerHTML='− '+money(coupon);
+const cs=stages[0].querySelectorAll('.conditional b');cs[0].innerHTML=money(sub);cs[1].innerHTML=money(edu);
+stages[1].querySelector('.stage-total b').innerHTML=money(old.estimate+old.subsidy);
+stages[1].querySelector('.stage-detail>div:first-child b').innerHTML=money(old.estimate);
+stages[1].querySelector('.stage-detail>div:nth-child(2) b').innerHTML=money(old.subsidy);
+}
+function assess(){
+toast('调整服务侧机型选择页');
+}
+document.querySelector('[data-sheet="device"]').onclick=assess;
+function initializeEditor(context,embedded=false){
+ctx=context;
+if(embedded){
+document.body.classList.add('flow-editor');
+$('.exchange').appendChild($('.exchange-actions'));
+$('#cart').hidden=true;
+}else{
+document.body.classList.add('flow-page');
+$('.trade-header-link').textContent='返回结算页';$('.trade-header-link').href=returnPage.href;
+$('.trade-brand').href=returnPage.href;$('.trade-brand').setAttribute('aria-label','返回结算页');
+$('#cart').textContent='取消';
+}
+old={...old,...ctx.old};old.condition=old.condition||[0,0,0,0];
+document.querySelector(`[data-mode="${old.mode||'mail'}"]`).click();
+$('#contact').value=old.contact||'';$('#phone').value=old.phone||'';$('#address').textContent=old.address||'';$('#account').textContent=old.account||'158****5479';$('#agreement').checked=!!old.agreed;
+if(old.time){$('#time').textContent=old.time;$('.time').classList.add('chosen')}
+$('#exchange').textContent='保存回收信息';paint();if(ctx.assess)assess();
+}
+window.addEventListener('message',e=>{if(e.source===parent&&e.data?.type==='flow-init')initializeEditor(e.data.context,true)});
+if(pageContext)initializeEditor(pageContext);
+function save(addToCart){
+if(!$('#contact').value.trim()){toast('请输入联系人姓名');$('#contact').focus();return}
+if(!/^1\d{10}$/.test($('#phone').value)){toast('请输入正确的联系电话');return}
+if(mode==='home'){toast('当前位置不支持上门，请选择邮寄回收');return}
+if(!$('.time').classList.contains('chosen')){toast('请选择取件时间');return}
+if(!$('#agreement').checked){toast('请先阅读并同意以旧换新协议');return}
+old={...old,contact:$('#contact').value.trim(),phone:$('#phone').value,address:$('#address').textContent,account:$('#account').textContent,time:$('#time').textContent,mode,agreed:true};
+if(pageContext){
+const groups=S.parse(returnPage.searchParams.get('oldGroups'),{}),key=ctx.productKey,olds=groups[key]||[];
+groups[key]=ctx.action==='add-old'?[...olds,old]:olds.map(item=>item.id===old.id?old:item);
+returnPage.searchParams.set('oldGroups',JSON.stringify(groups));
+['tradeinSelected','tradeinPending'].forEach(name=>{const keys=new Set((returnPage.searchParams.get(name)||'').split(',').filter(Boolean));keys.add(key);returnPage.searchParams.set(name,[...keys].join(','))});
+returnPage.searchParams.set('editingOld',old.id);returnPage.searchParams.set('savedTradein','1');
+window.location.href=returnPage.href;return;
+}
+if(ctx){parent.postMessage({type:'flow-save',old},'*');return}
+const product={name:$('.new-product p').textContent,price:15999};
+if(window.parent===window){
+  const q=new URLSearchParams({source:'sync',old:JSON.stringify(old),newProduct:JSON.stringify(product)});
+  window.location.href=(addToCart?'cart.html':'settlement-center.html')+'?'+q.toString();
+  return;
+}
+parent.postMessage({type:'trade-checkout',old,addToCart,product},'*');
+}
+$('#cart').onclick=()=>{if(pageContext){window.location.href=returnPage.href;return}save(true)};$('#exchange').onclick=()=>save(false);
+if(window.parent!==window)parent.postMessage('flow-ready','*');
+})();
+</script></body></html>

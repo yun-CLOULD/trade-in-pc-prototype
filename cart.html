@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>购物车 - 联想商城</title>
+<style>
+:root{--red:#d52b2b;--green:#45a748;--text:#222;--muted:#888;--line:#ececec;--page:#f5f5f5}
+*{box-sizing:border-box}
+html,body{margin:0;min-width:1250px;min-height:100%;font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif;color:var(--text);background:var(--page)}
+a{color:inherit;text-decoration:none}button{font:inherit}
+.site-header{height:50px;border-bottom:1px solid #ddd;background:#fff}
+.header-inner{width:1200px;height:50px;margin:0 auto;display:flex;align-items:center}
+.logo{display:flex;width:146.667px;height:50px;align-items:center;justify-content:center;background:var(--red);color:#fff;font:700 30px/50px Arial,sans-serif}
+.header-title{margin-left:16.667px;font-size:16.667px;color:#222}
+.header-nav{margin-left:auto;display:flex;align-items:center;font-size:10.833px;color:#333}
+.header-nav i{width:1px;height:13.333px;margin:0 10px;background:#bbb}
+.header-nav a:hover{color:var(--red)}
+.cart-main{width:1200px;margin:20.833px auto 14.167px}
+.cart-top{height:31.667px;display:flex;align-items:center;padding:0}
+.cart-top>*{transform:translateY(-5.833px)}
+.all-goods{margin-left:35px;color:var(--red);font-size:13.333px;font-weight:600}.all-goods strong{margin-left:1.667px}
+.delivery{margin-left:auto;display:flex;align-items:center;gap:10px;font-size:10.833px}
+.delivery label{font-weight:600}
+.delivery-box{position:relative;width:229.167px;height:25px;padding:0 28.333px 0 10px;border:1px solid #e2e2e2;background:#fff;line-height:23.333px;color:#555;white-space:nowrap}
+.delivery-box::after{content:"";position:absolute;right:10.833px;top:7.5px;width:5.833px;height:5.833px;border-right:1px solid #bbb;border-bottom:1px solid #bbb;transform:rotate(45deg)}
+.columns{display:grid;grid-template-columns:40px 500px 166.667px 150px 141.667px 133.333px;align-items:center;height:60px;padding:0 28.333px;margin-bottom:6.667px;background:#fff;font-size:13.333px;font-weight:600}
+.columns>span{text-align:center}.columns>.check-label{min-width:63.333px;white-space:nowrap;transform:translateX(7.5px)}
+.check-label{display:flex;align-items:center;gap:8.333px;cursor:pointer}.check-label input{position:absolute;opacity:0;pointer-events:none}
+.check-mark{position:relative;display:inline-block;width:14.167px;height:14.167px;border:1px solid #bfc5ca;border-radius:50%;background:#fff;flex:0 0 auto}
+.check-label input:checked+.check-mark{border-color:var(--red);background:var(--red)}
+.check-label input:checked+.check-mark::after{content:"";position:absolute;left:4.167px;top:1.667px;width:3.333px;height:6.667px;border-right:1.667px solid #fff;border-bottom:1.667px solid #fff;transform:rotate(45deg)}
+.cart-item{margin-top:6.667px;padding:0 28.333px;background:#fff}
+.cart-item.is-selected{background:#fffaf7}
+.promo-line{display:flex;align-items:center;height:60.833px;border-bottom:1px solid #eee;font-size:11.667px;font-weight:600}
+.promo-line>*{transform:translateY(-4.167px)}
+.promo-tag{margin-right:11.667px;padding:3.333px 6.667px;border-radius:1.667px;background:#fff0ef;color:var(--red);font-size:10px;font-weight:400}
+.item-row{display:grid;grid-template-columns:40px 500px 166.667px 150px 141.667px 133.333px;align-items:center;min-height:166.667px}.item-row>.check-label{transform:translate(7.5px,-8.333px)}
+.product-cell{display:grid;grid-template-columns:105px 1fr;align-items:center;gap:15px;padding-right:16.667px}
+.product-cell>div:last-child{transform:translateY(-28.333px)}
+.product-image-wrap{display:flex;align-items:center;justify-content:center;width:105px;height:110px}
+.product-image{width:121.667px;height:121.667px;object-fit:contain;mix-blend-mode:multiply}
+.yoga-image{width:103.333px;height:103.333px;filter:saturate(.55) brightness(1.18)}
+.product-image-crop{display:block;width:105px;height:110px;background-image:url("assets/cart-reference-top.png");background-repeat:no-repeat;background-size:1706px 932.667px}
+.product-image-crop.r9000x{background-position:-321.667px -196.667px}.product-image-crop.yoga{background-position:-321.667px -430.833px}.product-image-crop.y7000x{background-position:-321.667px -605px}
+.product-name{font-size:13.333px;line-height:18.333px;font-weight:600}
+.product-options{display:flex;gap:5.833px;margin-top:9.167px}
+.option-btn{height:20.833px;padding:0 7.5px;border:1px solid var(--red);background:#fff;color:var(--red);font-size:10.833px;cursor:pointer}
+.option-btn::after{content:"";display:inline-block;width:4.167px;height:4.167px;margin:0 0 2.5px 5px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg)}
+.price-cell{font-size:11.667px;line-height:21.667px;text-align:left;transform:translateY(-36.667px)}.price-cell .trade-price{color:var(--green)}.price-cell .trade-price.is-final-price{color:var(--red)}.price-cell .trade-price strong{margin-left:5px;color:var(--red);font-size:15px;font-weight:500}
+.benefit-tags{display:flex;align-items:center;gap:6.667px;margin-top:6.667px;white-space:nowrap}
+.benefit-tag{display:inline-flex;align-items:center;justify-content:center;height:20px;padding:0 5px;border:1px solid;border-radius:1.667px;background:#fff;font-size:10px;font-weight:400;line-height:18.333px;white-space:nowrap;cursor:default;pointer-events:none;user-select:none}
+.benefit-tag.subsidy-tag{min-width:0;border-color:#2c9e45;background:#f1faf3;color:#2c9e45}
+.benefit-tag.tradein-tag{min-width:0;border-color:#f0aeae;background:#fff5f5;color:#e54848}
+.benefit-tag:disabled{opacity:1}
+.qty-cell{text-align:center;transform:translateY(-38.333px)}.qty-box{display:inline-grid;grid-template-columns:23.333px 45.833px 23.333px;height:25.833px;border:1px solid #e2e2e2;color:#aaa}.qty-box span{display:flex;align-items:center;justify-content:center;border-right:1px solid #e7e7e7}.qty-box span:last-child{border:0}.qty-box .qty-number{color:#555}.limit{margin-top:5.833px;color:var(--red);font-size:10px}
+.subtotal{text-align:center;font-size:13.333px;font-weight:600;transform:translateY(-45.833px)}.item-actions{color:#777;font-size:11.667px;line-height:18.333px;text-align:left;transform:translateY(-40.833px)}.item-actions button{display:block;padding:0;border:0;background:none;color:inherit;cursor:pointer}.item-actions button:hover{color:var(--red)}
+.summary-bar{display:grid;grid-template-columns:1fr auto auto 195.833px;align-items:center;height:60px;margin-top:14.167px;padding-left:28.333px;background:#fff}
+.summary-actions{display:flex;align-items:center;gap:30px;color:#555;font-size:10.833px;transform:translateX(7.5px)}.summary-actions .check-label{gap:11.667px}.summary-actions button{border:0;background:none;color:inherit;cursor:pointer}.summary-actions button:hover{color:var(--red)}
+.selected-count{padding:0 29.167px;color:#666;font-size:10.833px}.selected-count strong{margin:0 2.5px;color:var(--red);font-size:15px}
+.total-price{min-width:208.333px;padding:0 23.333px;border-left:1px solid #eee;color:#555;font-size:10.833px}.total-main{display:flex;align-items:baseline;justify-content:flex-end}.total-main strong{margin-left:7.5px;color:var(--red);font-size:20px}.savings-line{display:flex;align-items:center;justify-content:flex-end;margin-top:1.667px;color:#555}.savings-line[hidden]{display:none}.savings-line strong{margin-left:6.667px;color:var(--red);font-size:10.833px}.savings-detail{margin-left:20px;color:#777;white-space:nowrap}
+.checkout-button{align-self:stretch;border:0;background:var(--red);color:#fff;font-size:15px;cursor:pointer}.checkout-button:hover{background:var(--red)}
+.recommend{margin-top:29.167px;padding:31.667px 28.333px 50px;background:#fff}.recommend h2{margin:0;padding-left:10px;border-left:2.5px solid var(--red);font-size:18.333px;line-height:23.333px}
+.recommend-body{position:relative;margin-top:28.333px;padding:0 60px}.recommend-list{display:grid;grid-template-columns:repeat(4,1fr);gap:28.333px}.recommend-card{text-align:left}.recommend-image{display:flex;align-items:center;justify-content:center;height:170.833px}.recommend-image img{width:183.333px;height:162.5px;object-fit:contain;mix-blend-mode:multiply}.recommend-name{min-height:36.667px;font-size:11.667px;line-height:18.333px}.recommend-price{margin-top:3.333px;color:var(--red);font-size:13.333px;font-weight:600}.carousel-arrow{position:absolute;top:70.833px;width:36.667px;height:36.667px;border:0;border-radius:50%;background:#f3f3f3;color:#c8c8c8;font-size:30px;line-height:33.333px;cursor:pointer}.carousel-arrow.left{left:0}.carousel-arrow.right{right:0}
+.recommend-image{height:212.5px}.recommend-name{margin-top:15px}.recommend-card.red-snake .recommend-image img{filter:hue-rotate(140deg) saturate(1.25)}.carousel-arrow{top:120.833px}
+.service-strip{background:#fff;border-top:1px solid #f1f1f1}.service-inner{width:1200px;height:208.333px;margin:0 auto;display:grid;grid-template-columns:repeat(6,1fr);align-items:center}.service-item{text-align:center;color:#444;font-size:12.5px;font-weight:600}.service-icon{display:flex;height:60px;align-items:center;justify-content:center}.service-icon svg{width:51.667px;height:51.667px;fill:none;stroke:#cbd1dc;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.site-footer{background:#fff;border-top:1px solid #f5f5f5}.footer-inner{width:1116.67px;margin:0 auto;padding:66.667px 0 58.333px;display:grid;grid-template-columns:repeat(6,1fr) 216.667px;gap:20.833px}.footer-column h3{margin:0 0 13.333px;font-size:12.5px}.footer-column a{display:block;margin-top:8.333px;color:#777;font-size:10.833px}.footer-column a:hover{color:var(--red)}.footer-support{padding-left:37.5px;border-left:1px solid #ddd}.footer-phone{color:var(--red);font-size:20.833px;font-weight:600}.footer-time{margin-top:6.667px;color:#888;font-size:10px}.footer-consult{width:111.667px;height:30.833px;margin-top:10px;border:1px solid #ccc;background:#fff;color:#bbb;font-size:11.667px}
+.toast{position:fixed;left:50%;bottom:31.667px;z-index:20;padding:10px 16.667px;border-radius:2.5px;background:rgba(20,20,20,.9);color:#fff;font-size:10.833px;opacity:0;transform:translate(-50%,10px);pointer-events:none;transition:.2s}.toast.visible{opacity:1;transform:translate(-50%,0)}
+
+/* Preserve readable price typography within the compact cart grid. */
+.price-cell{font-size:14px;line-height:24px;color:#333}
+.price-cell .unit-price-number{font-weight:600}
+.price-cell .price-currency{font-weight:400}
+.price-cell .trade-price{font-size:12px}
+.price-cell .trade-price strong{font-size:16px;font-weight:500}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner"><a href="联想商品页-PC端-直接打开.html"><span class="logo">Lenovo</span></a><span class="header-title">购物车</span><nav class="header-nav"><a href="联想商品页-PC端-直接打开.html">返回首页</a><i></i><span>186****6874</span><i></i><a href="#" class="static-action">我的订单</a><i></i><a href="#" class="static-action">退出</a></nav></div></header>
+<main class="cart-main">
+<div class="cart-top"><span class="all-goods">全部商品<strong id="goodsCount">3</strong></span><div class="delivery"><label>配送至：</label><span class="delivery-box">北京市 北京市 海淀区 马连洼街道</span></div></div>
+<div class="columns"><label class="check-label"><input id="selectAllTop" type="checkbox"><span class="check-mark"></span><span>全选</span></label><span>商品</span><span>单价</span><span>数量</span><span>小计</span><span>操作</span></div>
+<section class="cart-item" data-product="r9000x" data-price="21499" data-hand-price="21499" data-saving="0">
+<div class="item-row"><label class="check-label"><input class="item-check" type="checkbox"><span class="check-mark"></span></label><div class="product-cell"><div class="product-image-wrap"><span class="product-image-crop r9000x" role="img" aria-label="联想拯救者 R9000X"></span></div><div><div class="product-name">联想 拯救者R9000X 2026 15.3英寸电竞游戏笔记本<br>电脑 星烁紫</div><div class="benefit-tags"><button class="benefit-tag subsidy-tag" type="button" aria-pressed="false" data-default-label="领国补 至高减15%" data-active-label="已领取 国补减¥1,500">领国补 至高减15%</button><button class="benefit-tag tradein-tag" type="button" aria-pressed="false" data-default-label="以旧换新" data-active-label="已绑定旧机">以旧换新</button></div><div class="product-options"><button class="option-btn static-action" type="button">选择服务</button><button class="option-btn static-action" type="button">选择选件</button></div></div></div><div class="price-cell"><div><span class="price-currency">¥</span> <span class="unit-price-number">21499</span></div><div class="trade-price">预估国补后：<strong>¥ 19999</strong></div></div><div class="qty-cell"><div class="qty-box"><span>−</span><span class="qty-number">1</span><span>＋</span></div></div><div class="subtotal">¥21499</div><div class="item-actions"><button class="static-action" type="button">移入收藏夹</button><button class="static-action" type="button">删除</button></div></div>
+</section>
+<section class="cart-item" data-product="yoga-air-14" data-price="21499" data-hand-price="19969" data-saving="1530">
+<div class="promo-line"><span class="promo-tag">下单立减</span><span>下单立减1500元</span></div>
+<div class="item-row"><label class="check-label"><input class="item-check" type="checkbox"><span class="check-mark"></span></label><div class="product-cell"><div class="product-image-wrap"><span class="product-image-crop yoga" role="img" aria-label="YOGA Air 14 Ultra Aura"></span></div><div><div class="product-name">YOGA Air 14 Ultra Aura 2026 14英寸轻薄笔记本<br>电脑 云绢</div><div class="benefit-tags"><button class="benefit-tag subsidy-tag" type="button" aria-pressed="false" data-default-label="领国补 至高减15%" data-active-label="已领取 国补减¥3,030">领国补 至高减15%</button><button class="benefit-tag tradein-tag" type="button" aria-pressed="false" data-default-label="以旧换新" data-active-label="已绑定旧机">以旧换新</button></div><div class="product-options"><button class="option-btn static-action" type="button">选择服务</button><button class="option-btn static-action" type="button">选择选件</button><button class="option-btn static-action" type="button">领券</button></div></div></div><div class="price-cell"><div><span class="price-currency">¥</span> <span class="unit-price-number">21499</span></div><div class="trade-price">预估国补后：<strong>¥ 18469</strong></div></div><div class="qty-cell"><div class="qty-box"><span>−</span><span class="qty-number">1</span><span>＋</span></div></div><div class="subtotal">¥21499</div><div class="item-actions"><button class="static-action" type="button">移入收藏夹</button><button class="static-action" type="button">删除</button></div></div>
+</section>
+<section class="cart-item" data-product="y7000x" data-price="12999" data-hand-price="12969" data-saving="30">
+<div class="item-row"><label class="check-label"><input class="item-check" type="checkbox"><span class="check-mark"></span></label><div class="product-cell"><div class="product-image-wrap"><span class="product-image-crop y7000x" role="img" aria-label="联想拯救者 Y7000X"></span></div><div><div class="product-name">联想拯救者Y7000X 2026 15.3英寸电竞游戏本笔记本<br>电脑 碳晶黑</div><div class="benefit-tags"><button class="benefit-tag subsidy-tag" type="button" aria-pressed="false" data-default-label="领国补 至高减15%" data-active-label="已领取 国补减¥1,530">领国补 至高减15%</button><button class="benefit-tag tradein-tag" type="button" aria-pressed="false" data-default-label="以旧换新" data-active-label="已绑定旧机">以旧换新</button></div><div class="product-options"><button class="option-btn static-action" type="button">选择服务</button><button class="option-btn static-action" type="button">选择选件</button><button class="option-btn static-action" type="button">领券</button></div></div></div><div class="price-cell"><div><span class="price-currency">¥</span> <span class="unit-price-number">12999</span></div><div class="trade-price">预估国补后：<strong>¥ 11469</strong></div></div><div class="qty-cell"><div class="qty-box"><span>−</span><span class="qty-number">1</span><span>＋</span></div></div><div class="subtotal">¥12999</div><div class="item-actions"><button class="static-action" type="button">移入收藏夹</button><button class="static-action" type="button">删除</button></div></div>
+</section>
+<div class="summary-bar"><div class="summary-actions"><label class="check-label"><input id="selectAllBottom" type="checkbox"><span class="check-mark"></span><span>全选</span></label><button class="static-action" type="button">删除</button><button class="static-action" type="button">清空失效商品</button><button class="static-action" type="button">移入收藏夹</button></div><div class="selected-count">已选择<strong id="selectedCount">0</strong>件</div><div class="total-price"><div class="total-main"><span>实付款：</span><strong>¥<span id="totalPrice">0</span></strong></div><div class="savings-line" id="savingsLine" hidden><span>节省了：</span><strong>¥<span id="savingAmount">0</span></strong><span class="savings-detail">优惠明细 ⓘ</span></div></div><button class="checkout-button" id="checkout" type="button">去结算</button></div>
+<section class="recommend"><h2>为你推荐</h2><div class="recommend-body"><button class="carousel-arrow left static-action" type="button">‹</button><div class="recommend-list"><article class="recommend-card red-snake"><div class="recommend-image"><img src="assets/e1BMymbVviLm9hRueSQV9hrFU-3492.jpg" alt="联想拯救者R7000P"></div><div class="recommend-name">联想拯救者R7000P 2025 16英寸电竞游戏笔记本电脑 碳晶黑</div><div class="recommend-price">¥ 13299</div></article><article class="recommend-card"><div class="recommend-image"><img src="assets/c8cac4f935-XtMYLlh6bRm17GM1SV1dnAnCM-1684.jpg" alt="联想拯救者R7000X"></div><div class="recommend-name">联想拯救者R7000X 2026 15.3英寸电竞游戏本笔记本电脑 碳晶黑</div><div class="recommend-price">¥ 12699</div></article><article class="recommend-card red-snake"><div class="recommend-image"><img src="assets/e1BMymbVviLm9hRueSQV9hrFU-3492.jpg" alt="联想拯救者R7000P AI元启"></div><div class="recommend-name">联想拯救者R7000P 2025 AI元启 16英寸电竞游戏笔记本电脑 碳晶黑</div><div class="recommend-price">¥ 11999</div></article><article class="recommend-card"><div class="recommend-image"><img src="assets/c8cac4f935-XtMYLlh6bRm17GM1SV1dnAnCM-1684.jpg" alt="联想拯救者Y9000P"></div><div class="recommend-name">联想拯救者Y9000P 2026 16英寸电竞游戏本笔记本电脑 碳晶黑</div><div class="recommend-price">¥ 15699</div></article></div><button class="carousel-arrow right static-action" type="button">›</button></div></section>
+</main>
+<section class="service-strip"><div class="service-inner">
+<div class="service-item"><span class="service-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="27" r="18"/><path d="m32 16 3.5 7.2 8 .9-5.8 5.5 1.5 7.8-7.2-3.8-7.2 3.8 1.5-7.8-5.8-5.5 8-.9zM20 42l-5 14 10-4 7 8 3-15M44 42l5 14-10-4-7 8"/></svg></span>官方正品直达</div>
+<div class="service-item"><span class="service-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M9 53h43M13 47V30h8v17M27 47V20h8v27M41 47V11h8v36"/><circle cx="51" cy="18" r="9"/><path d="M47 18h8M51 13v10"/></svg></span>会员阶梯价格</div>
+<div class="service-item"><span class="service-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 22h14V8h12c-2 7 9 7 7 0h15v15c-7-2-7 9 0 7v14H42c2 7-9 7-7 0H22V31c-7 2-7-9 0-7V22z"/><path d="M10 52h44"/></svg></span>按需定制机型</div>
+<div class="service-item"><span class="service-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M13 8h30v43H13zM20 17h16M20 24h12"/><path d="M22 33h13M28 28v17M23 29l5 6 5-6"/><ellipse cx="47" cy="46" rx="10" ry="5"/><path d="M37 46v8c0 3 4 5 10 5s10-2 10-5v-8"/></svg></span>企业金融账期</div>
+<div class="service-item"><span class="service-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M18 23c0-9 6-15 14-15s14 6 14 15M13 23h38l-5 32H18z"/><path d="M24 36h16M32 29v15M27 31l5 6 5-6"/><ellipse cx="50" cy="51" rx="9" ry="4"/></svg></span>积分兑换好礼</div>
+<div class="service-item"><span class="service-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="m7 27 25-17 25 17M12 27h40v28H12zM8 55h48M19 31v17M27 31v17M37 31v17M45 31v17"/><path d="M17 23h30"/></svg></span>支持对公付款</div>
+</div></section>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-column"><h3>购物指南</h3><a href="#">购买流程</a><a href="#">注册登录</a><a href="#">商品评价</a></div><div class="footer-column"><h3>配送方式</h3><a href="#">配送方式</a><a href="#">配送方式信息</a><a href="#">签收原则</a><a href="#">物流查询</a></div><div class="footer-column"><h3>支付方式</h3><a href="#">分期支付</a><a href="#">支付方式</a><a href="#">支付问题</a></div><div class="footer-column"><h3>订单信息</h3><a href="#">订单信息</a><a href="#">发票信息</a><a href="#">手机激活查询</a></div><div class="footer-column"><h3>售后服务</h3><a href="#">售后服务总则</a><a href="#">24小时在线客服</a><a href="#">联想服务入口</a><a href="#">热门解决方案</a><a href="#">Lenovo Quick Fix工具</a></div><div class="footer-column"><h3>其他说明</h3><a href="#">服务承诺</a><a href="#">账户安全</a><a href="#">手机产品购买须知</a><a href="#">环境信息</a><a href="#">联想wiki-SMB</a></div><div class="footer-support"><div class="footer-phone">400-166-6666</div><div class="footer-time">周一到周日 9:00-21:00</div><button class="footer-consult static-action" type="button">◉ 在线咨询</button></div></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="logic/trade-state.js"></script>
+<script src="logic/editor-host.js?v=20261012-6"></script>
+<script>
+(()=>{
+const cartParams=new URLSearchParams(location.search);const inboundOld=TradeState.parse(cartParams.get('old'),null);const inboundProduct=TradeState.parse(cartParams.get('newProduct'),null);
+const itemChecks=[...document.querySelectorAll('.item-check')];const selectAllTop=document.getElementById('selectAllTop');const selectAllBottom=document.getElementById('selectAllBottom');const selectedCount=document.getElementById('selectedCount');const totalPrice=document.getElementById('totalPrice');const savingsLine=document.getElementById('savingsLine');const savingAmount=document.getElementById('savingAmount');const toast=document.getElementById('toast');let toastTimer;
+function showToast(message){toast.textContent=message;toast.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('visible'),2200)}
+if(inboundOld&&inboundProduct){const first=itemChecks[0].closest('.cart-item');first.dataset.product='sync-product';first.dataset.price=inboundProduct.price;first.dataset.saving='2060';first.dataset.handPrice=Number(inboundProduct.price)-2060;first.querySelector('.product-name').textContent=inboundProduct.name;first.querySelector('.unit-price-number').textContent=inboundProduct.price;itemChecks[0].checked=true;}
+itemChecks.forEach(input=>{const item=input.closest('.cart-item');item.dataset.quantity='1';const spans=item.querySelectorAll('.qty-box>span');[0,2].forEach(i=>{spans[i].setAttribute('role','button');spans[i].tabIndex=0;spans[i].setAttribute('aria-label',i===0?'减少数量':'增加数量');const change=()=>{item.dataset.quantity=TradeState.qty(Number(item.dataset.quantity)+(i===0?-1:1));refresh()};spans[i].onclick=change;spans[i].onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();change()}}})});
+function refresh(){
+const selected=itemChecks.filter(input=>input.checked);
+itemChecks.forEach(input=>{
+const item=input.closest('.cart-item');
+const q=TradeState.qty(item.dataset.quantity);item.querySelector('.qty-number').textContent=q;item.querySelector('.subtotal').textContent='¥'+Number(item.dataset.price)*q;item.querySelectorAll('.qty-box>span')[0].setAttribute('aria-disabled',q===1);item.querySelectorAll('.qty-box>span')[2].setAttribute('aria-disabled',q===2);
+const priceCopy=item.querySelector('.trade-price');
+if(!priceCopy.dataset.defaultHtml)priceCopy.dataset.defaultHtml=priceCopy.innerHTML;
+item.classList.toggle('is-selected',input.checked);
+priceCopy.classList.remove('is-final-price');
+priceCopy.innerHTML=priceCopy.dataset.defaultHtml;
+if(input.checked&&selected.length===1&&Number(item.dataset.saving)>0){
+priceCopy.classList.add('is-final-price');
+priceCopy.innerHTML=`预估到手价：<strong>¥ ${Number(item.dataset.handPrice).toLocaleString('en-US').replaceAll(',','')}</strong>`;
+}
+});
+const all=selected.length===itemChecks.length;
+const bestSaving=selected.reduce((best,input)=>Math.max(best,Number(input.closest('.cart-item').dataset.saving)),0);
+const baseTotal=selected.reduce((sum,input)=>sum+Number(input.closest('.cart-item').dataset.price)*TradeState.qty(input.closest('.cart-item').dataset.quantity),0);
+selectAllTop.checked=all;selectAllBottom.checked=all;selectedCount.textContent=selected.reduce((n,i)=>n+TradeState.qty(i.closest('.cart-item').dataset.quantity),0);
+totalPrice.textContent=(baseTotal-bestSaving).toLocaleString('en-US').replaceAll(',','');
+savingAmount.textContent=bestSaving.toLocaleString('en-US').replaceAll(',','');savingsLine.hidden=bestSaving===0;
+}
+itemChecks.forEach(input=>input.addEventListener('change',refresh));[selectAllTop,selectAllBottom].forEach(input=>input.addEventListener('change',()=>{itemChecks.forEach(item=>item.checked=input.checked);refresh()}));
+document.querySelectorAll('.benefit-tag').forEach(tag=>{tag.disabled=true;tag.tabIndex=-1;tag.removeAttribute('aria-pressed');tag.setAttribute('aria-disabled','true')});
+document.querySelectorAll('.static-action').forEach(item=>item.addEventListener('click',event=>{event.preventDefault();showToast('此功能为静态镜像展示')}));
+document.getElementById('checkout').addEventListener('click',()=>{const selected=itemChecks.filter(input=>input.checked);if(!selected.length){showToast('请先选择需要结算的商品');return}const items=selected.map(input=>input.closest('.cart-item').dataset.product).join(',');const next=new URLSearchParams({source:'cart',items,total:totalPrice.textContent,saving:savingAmount.textContent});next.set('quantities',JSON.stringify(Object.fromEntries(selected.map(i=>{const el=i.closest('.cart-item');return [el.dataset.product,TradeState.qty(el.dataset.quantity)]}))));if(inboundOld){next.set('old',JSON.stringify(inboundOld));next.set('newProduct',JSON.stringify(inboundProduct));}window.location.href=`settlement-center.html?${next.toString()}`});
+refresh();
+})();
+</script>
+</body>
+</html>

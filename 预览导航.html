@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>以旧换新 PC 端 · 预览导航</title>
+<style>
+  :root{--red:#E60012;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f6f8;color:#222;}
+  header{background:var(--red);color:#fff;padding:28px 32px;}
+  header h1{margin:0;font-size:22px;}
+  header p{margin:8px 0 0;opacity:.9;font-size:13px;}
+  .wrap{max-width:960px;margin:0 auto;padding:28px 20px 60px;}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 26px;}
+  .meta span{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:8px 14px;font-size:13px;color:#444;}
+  .meta b{color:var(--red);}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;}
+  .card{background:#fff;border:1px solid #ececec;border-radius:12px;padding:18px;transition:.15s;text-decoration:none;color:inherit;display:block;}
+  .card:hover{border-color:var(--red);box-shadow:0 6px 18px rgba(230,0,18,.12);transform:translateY(-2px);}
+  .card .tag{display:inline-block;background:#fff0f1;color:var(--red);font-size:12px;padding:3px 10px;border-radius:6px;margin-bottom:10px;}
+  .card h3{margin:0 0 6px;font-size:16px;}
+  .card p{margin:0;font-size:13px;color:#666;line-height:1.5;}
+  .flow{background:#fff;border:1px solid #ececec;border-radius:12px;padding:20px;margin-top:28px;}
+  .flow h2{margin:0 0 14px;font-size:16px;}
+  .flow .steps{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13px;color:#555;}
+  .flow .node{background:#fff0f1;color:var(--red);border:1px solid #ffd2d6;border-radius:8px;padding:6px 12px;}
+  .flow .arrow{color:#bbb;}
+  .note{margin-top:24px;font-size:12px;color:#999;line-height:1.6;}
+</style>
+</head>
+<body>
+<header>
+  <h1>以旧换新 PC 端 · 线上原型预览</h1>
+  <p>打包时间 2026-10-13 14:48 · 当前线上原型 · 双击任意页面即可体验完整流程</p>
+</header>
+<div class="wrap">
+  <div class="meta">
+    <span>页面：<b>8</b> 个</span>
+    <span>图片资源：<b>266</b> 张</span>
+    <span>样式文件：<b>12</b> 个 CSS</span>
+    <span>资源体积：<b>11 MB</b></span>
+  </div>
+
+  <div class="grid">
+    <a class="card" href="index.html">
+      <span class="tag">流程入口</span>
+      <h3>商品详情页</h3>
+      <p>联想拯救者 Y7000P 2026 商品页，以旧换新标签与「去估价 / 加购」入口，跳转购物车与回收表单。</p>
+    </a>
+    <a class="card" href="cart.html">
+      <span class="tag">购物车</span>
+      <h3>购物车</h3>
+      <p>新品 1–2 件、价格与数量联动，以旧换新标签展示，每件商品保留「添加旧品」入口，跳转结算中心。</p>
+    </a>
+    <a class="card" href="settlement-center.html">
+      <span class="tag">核心结算</span>
+      <h3>结算中心</h3>
+      <p>多商品结算：默认旧品列表 + 每件旧品单独编辑/删除/添加，补贴 260 元/件，汇总按旧品件数计算。</p>
+    </a>
+    <a class="card" href="bind-recycle-order.html">
+      <span class="tag">回收单</span>
+      <h3>选择回收单</h3>
+      <p>绑定已有回收单：选择 / 确认 / 退出参与，「添加旧机」接入评估与回收表单。</p>
+    </a>
+    <a class="card" href="order-detail.html">
+      <span class="tag">订单</span>
+      <h3>订单详情</h3>
+      <p>接收购买件数、回收件数、回收款与补贴金额，保留回收表单数据，流程终点。</p>
+    </a>
+    <a class="card" href="trade-editor.html">
+      <span class="tag">表单编辑器</span>
+      <h3>以旧换新（回收表单）</h3>
+      <p>独立回收表单编辑页：评估机况、联系人/手机号/回收方式/预约/协议，保存或取消返回结算弹窗。</p>
+    </a>
+    <a class="card" href="preview-1920.html">
+      <span class="tag">预览</span>
+      <h3>1920×1080 桌面预览</h3>
+      <p>标准桌面分辨率整页预览视图。</p>
+    </a>
+    <a class="card" href="联想商品页-PC端-直接打开.html">
+      <span class="tag">离线版</span>
+      <h3>联想商品页（直接打开）</h3>
+      <p>资源内联的自包含版本，无需依赖 assets 文件夹，可直接双击打开。</p>
+    </a>
+  </div>
+
+  <div class="flow">
+    <h2>核心流程走向</h2>
+    <div class="steps">
+      <span class="node">商品详情</span><span class="arrow">→</span>
+      <span class="node">购物车</span><span class="arrow">→</span>
+      <span class="node">结算中心</span><span class="arrow">→</span>
+      <span class="node">订单详情</span>
+    </div>
+    <div class="steps" style="margin-top:12px;">
+      <span class="arrow">↳ 支线：</span>
+      <span class="node">结算中心 / 购物车</span><span class="arrow">↔</span>
+      <span class="node">绑定回收单</span><span class="arrow">↔</span>
+      <span class="node">回收表单编辑器</span>
+    </div>
+  </div>
+
+  <p class="note">说明：本原型为演示数据，不连接真实下单 / 估价 / 回收服务；每件旧品补贴 260 元、机况扣减均为演示规则。资源文件夹 assets 须与页面保持同目录。</p>
+</div>
+</body>
+</html>
